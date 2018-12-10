@@ -333,16 +333,16 @@ diagram $\tildeM$ of complexity $O(\alert{(mn/k)}\eps^{-2}\log\eps^{-1})$.
 \cost^*(t) \coloneqq \min_{\text{$k$-matching $M$}} \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{a+t-b}^p\right]^{1/p}
 \end{equation*}
 \begin{itemize}
-\item There are at most $k/2$ pairs $(a, b) \in M_t$ with $\norm{a+t-b} \geq 2\cost^*(t)$.
-\item There are at most $k/2$ pairs $(a, b) \in M_t$ with $\norm{t-\alert{t_{ab}}} \geq 2\cost^*(t)$.
+\item There are at most $k/2$ pairs $(a, b) \in M_t$ with $\norm{a+t-b} \geq 2^{1/p}\cost^*(t)$.
+\item There are at most $k/2$ pairs $(a, b) \in M_t$ with $\norm{t-\alert{t_{ab}}} \geq 2^{1/p}\cost^*(t)$.
 \end{itemize}
 \end{frame}
 
 % averaging argument picture
 \begin{frame}{Averaging argument visualized}
-% ``for matching M_t of cost \cost^*(t), there are \leq k/2 pairs with \norm{t - t_ab} \geq 2\cost^*(t)''
+% ``for matching M_t of cost \cost^*(t), there are \leq k/2 pairs with \norm{t - t_ab} \geq 2^{1/p}\cost^*(t)''
 \begin{itemize}
-\item There are at most $k/2$ pairs $(a, b) \in M_t$ with $\norm{t-\alert{t_{ab}}} \geq 2\cost^*(t)$.
+\item There are at most $k/2$ pairs $(a, b) \in M_t$ with $\norm{t-\alert{t_{ab}}} \geq 2^{1/p}\cost^*(t)$.
 \end{itemize}
 %TODO figure
 \end{frame}
@@ -370,11 +370,11 @@ diagram $\tildeM$ of complexity $O(\alert{(mn/k)}\eps^{-2}\log\eps^{-1})$.
 \begin{frame}{Greedy clustering proof of approximation}
 % let X be the set of centers x_i, and ~M = Vor(X)
 % proof by figure?
-% for any translation t, consider disk D of radius 2\cost^*(t) centered at t
+% for any translation t, consider disk D of radius 2^{1/p}\cost^*(t) centered at t
 % D covers at least k/2 points of T
 % let i^* be the first index where D_i^* covers a point of D \cap T
-% since D_i^* is (approx) min-radius, r_i^* \leq 2* 2\cost^*(t)
-% so, \norm{t - x_i^*} \leq 3*2\cost^*(t)
+% since D_i^* is (approx) min-radius, r_i^* \leq 2* 2^{1/p}\cost^*(t)
+% so, \norm{t - x_i^*} \leq 3*2^{1/p}\cost^*(t)
 % as a NN, \norm{t - x_0} \leq 6\cost^*(t)
 % apply the Lipschitz property --> Vor(X) is O(1)-approx diagram
 % apply the grid refinement --> (1+\eps) approx diagram of size O((mn/k\eps^2)\log(1/\eps))
