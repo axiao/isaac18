@@ -1,5 +1,5 @@
-%\documentclass[xcolor={dvipsnames,usenames}]{beamer}
-\documentclass[xcolor={dvipsnames,usenames},handout]{beamer} % use this to compile w/o pauses
+\documentclass[xcolor={dvipsnames,usenames}]{beamer}
+%\documentclass[xcolor={dvipsnames,usenames},handout]{beamer} % use this to compile w/o pauses
 \mode<presentation>
 {
 \usetheme{madrid}
@@ -76,8 +76,8 @@
 % make tables less packed
 \renewcommand{\arraystretch}{1.5}
 % get rid of caption labels
-\setbeamertemplate{caption}{\raggedright\insertcaption\par}
-\captionsetup[subfigure]{labelformat=empty}
+%\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+%\captionsetup[subfigure]{labelformat=empty}
 % set beamer highlight color (alert)
 \setbeamercolor{alerted text}{fg=BrickRed}
 
@@ -148,11 +148,21 @@
 
 % gentle example + equation
 \begin{frame}{Example}
-% TODO figures:
 % point sets A and B of size m, n respectively
 % allowed to translate A --> A+t
 % minimum-cost k-matching between A+t and B
 % what's the best translation?
+\begin{figure}
+\begin{center}
+\includegraphics<1>[width=\textwidth,page=1]{pmt_example}%
+\includegraphics<2>[width=\textwidth,page=2]{pmt_example}%
+\includegraphics<3>[width=\textwidth,page=3]{pmt_example}%
+\includegraphics<4>[width=\textwidth,page=4]{pmt_example}%
+\includegraphics<5>[width=\textwidth,page=5]{pmt_example}%
+\includegraphics<6>[width=\textwidth,page=6]{pmt_example}%
+\includegraphics<7->[width=\textwidth,page=7]{pmt_example}%
+\end{center}
+\end{figure}
 \end{frame}
 
 % introduce cost function
@@ -165,21 +175,31 @@
 	\cost(M, t) \coloneqq \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{a+t-b}^p\right]^{1/p}
 	\end{equation*}
 \item $p = 2$: root-mean-squared cost
-\item Computable in $\poly(k, m, n)$ time for fixed $t$, \\
+\item For fixed $t$, minimum $M$ computable in $\poly(k, m, n)$ time, \\
 	e.g. by Hungarian algorithm.
 \end{itemize}
 \end{frame}
 
 % minimization diagram M
-\begin{frame}{Minimization diagram}
+\begin{frame}{Minimization diagram $\M$}
 % function over t for each k matching
 % cost*(t): the lower envelope
 % vertical projection subdivides the plane
 \begin{equation*}
 \cost^*(t) \coloneqq \min_{\text{$k$-matching $M$}} \cost(M, t)
 \end{equation*}
-%TODO figure
-
+\begin{figure}
+\begin{center}
+\includegraphics<1>[width=0.6\textwidth,page=1]{lower_env}%
+\includegraphics<2>[width=0.6\textwidth,page=2]{lower_env}%
+\includegraphics<3>[width=0.6\textwidth,page=3]{lower_env}%
+\includegraphics<4>[width=0.6\textwidth,page=4]{lower_env}%
+\includegraphics<5>[width=0.6\textwidth,page=5]{lower_env}%
+\includegraphics<6>[width=0.6\textwidth,page=6]{lower_env}%
+\includegraphics<7>[width=0.6\textwidth,page=7]{lower_env}%
+\includegraphics<8->[width=0.6\textwidth,page=8]{lower_env}%
+\end{center}
+\end{figure}
 \end{frame}
 
 % main questions
@@ -189,7 +209,6 @@
 %	rote: line intersects poly(n) cells
 % can we compute t*, the minimum point of cost*(t)?
 %	existing algorithm: traverse all cells of M (given point, find boundaries)
-%TODO inherit the figure
 \begin{enumerate}
 \item {\large What is the \EMPH{combinatorial complexity of $\M$}? Is it polynomial?}
 	\begin{itemize}
@@ -207,7 +226,16 @@
 
 % approximate diagram
 \begin{frame}{Approximating $\M$}
-%TODO figure
+\begin{figure}
+\begin{center}
+\includegraphics<1>[width=0.8\textwidth,page=1]{approx_diagram}%
+\includegraphics<2>[width=0.8\textwidth,page=2]{approx_diagram}%
+\includegraphics<3>[width=0.8\textwidth,page=3]{approx_diagram}%
+\includegraphics<4>[width=0.8\textwidth,page=4]{approx_diagram}%
+\includegraphics<5>[width=0.8\textwidth,page=5]{approx_diagram}%
+\includegraphics<6->[width=0.8\textwidth,page=6]{approx_diagram}%
+\end{center}
+\end{figure}
 \end{frame}
 
 % take away: approximation gives polynomial solutions to both
@@ -238,7 +266,15 @@
 % punchline: Vor(T) is constant approximate diagram!
 \begin{itemize}
 \item \EMPH{Point-to-point translations}: $T \coloneqq \{t_{ba} = (b - a) \mid a \in A, b \in B\}$
-%TODO figure
+\begin{figure}
+\begin{center}
+\includegraphics<1>[width=0.6\textwidth,page=1]{point-to-point}%
+\includegraphics<2>[width=0.6\textwidth,page=2]{point-to-point}%
+\includegraphics<3>[width=0.6\textwidth,page=3]{point-to-point}%
+\includegraphics<4>[width=0.6\textwidth,page=4]{point-to-point}%
+\includegraphics<5->[width=0.6\textwidth,page=5]{point-to-point}%
+\end{center}
+\end{figure}
 \item Claim: Let $\tildeM$ be $\Vor(T)$, with each $\VorRegion(t_{ba})$ assigned the optimal $k$-matching at $t_{ba}$.
 	Then, $\tildeM$ is a $O(1)$-approximate diagram.
 \end{itemize}
@@ -264,7 +300,8 @@ Then $\cost(M_t, t+\Delta) \leq \cost^*(t) + \norm{\Delta}$.
 % by massaging the cost function: there is a point of T relatively close to every t
 \begin{itemize}
 \item Claim: $\tildeM$ is an $O(1)$-approximate diagram.
-\item Given $t \in \reals^2$, let $t_0$ be its nearest neighbor in $T$, and $M_{t_0}$ the optimal matching at $t_0$.
+\item Given $t \in \reals^2$, let $t_0$ be its nearest neighbor in $T$,\\
+	and $M_{t_0}$ the optimal matching at $t_0$.
 \end{itemize}
 \begin{equation*}
 \begin{aligned}
@@ -282,7 +319,8 @@ Then $\cost(M_t, t+\Delta) \leq \cost^*(t) + \norm{\Delta}$.
 % Vor(T) is a constant approximate diagram!
 \begin{itemize}
 \item Claim: $\tildeM$ is an $O(1)$-approximate diagram.
-\item Given $t \in \reals^2$, let $t_0$ be its nearest neighbor in $T$, and $M_{t_0}$ the optimal matching at $t_0$.
+\item Given $t \in \reals^2$, let $t_0$ be its nearest neighbor in $T$,\\
+	and $M_{t_0}$ the optimal matching at $t_0$.
 \item $\norm{t - t_0} \leq \cost^*(t)$
 \end{itemize}
 \begin{equation*}
@@ -299,7 +337,11 @@ Then $\cost(M_t, t+\Delta) \leq \cost^*(t) + \norm{\Delta}$.
 \begin{frame}{$O(1)$ $\rightarrow$ $(1+\eps)$ approximation}
 % grid cell width 2^i cost^*(t_0)
 % resulting complexity is O((mn/\eps^2) \log(1/\eps))
-%TODO figure
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.5\textwidth,page=1]{nested-grid-crop}%
+\end{center}
+\end{figure}
 \begin{itemize}
 \item $(1+\eps)$ approximate diagram of size
 	$O(\abs{T}\eps^{-2}\log\eps^{-1}) = O((mn)\eps^{-2}\log\eps^{-1})$
@@ -324,7 +366,7 @@ diagram $\tildeM$ of complexity $O(\alert{(mn/k)}\eps^{-2}\log\eps^{-1})$.
 \end{frame}
 
 % key idea: averaging argument
-\begin{frame}{Key to compression: averaging argument}
+\begin{frame}{Averaging argument}
 % look at the cost function again
 % ``for matching M of cost \mu, there are \leq k/2 pairs with \norm{a-b} \geq 2\mu''
 % add translation t --> M_t
@@ -333,18 +375,24 @@ diagram $\tildeM$ of complexity $O(\alert{(mn/k)}\eps^{-2}\log\eps^{-1})$.
 \cost^*(t) \coloneqq \min_{\text{$k$-matching $M$}} \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{a+t-b}^p\right]^{1/p}
 \end{equation*}
 \begin{itemize}
-\item There are at most $k/2$ pairs $(a, b) \in M_t$ with $\norm{a+t-b} \geq 2^{1/p}\cost^*(t)$.
-\item There are at most $k/2$ pairs $(a, b) \in M_t$ with $\norm{t-\alert{t_{ab}}} \geq 2^{1/p}\cost^*(t)$.
+\item At most $k/2$ pairs $(a, b) \in M_t$ have $\norm{a+t-b} \geq 2^{1/p}\cost^*(t)$.
+\item At most $k/2$ pairs $(a, b) \in M_t$ have $\norm{t-\alert{t_{ab}}} \geq 2^{1/p}\cost^*(t)$.
 \end{itemize}
 \end{frame}
 
 % averaging argument picture
-\begin{frame}{Averaging argument visualized}
+\begin{frame}{Averaging argument (cont.)}
 % ``for matching M_t of cost \cost^*(t), there are \leq k/2 pairs with \norm{t - t_ab} \geq 2^{1/p}\cost^*(t)''
 \begin{itemize}
-\item There are at most $k/2$ pairs $(a, b) \in M_t$ with $\norm{t-\alert{t_{ab}}} \geq 2^{1/p}\cost^*(t)$.
+\item At most $k/2$ pairs $(a, b) \in M_t$ have $\norm{t-\alert{t_{ab}}} \geq 2^{1/p}\cost^*(t)$.
 \end{itemize}
-%TODO figure
+\begin{figure}
+\begin{center}
+\includegraphics<1>[width=0.6\textwidth,page=1]{ptp_in_disk}%
+\includegraphics<2>[width=0.6\textwidth,page=2]{ptp_in_disk}%
+\includegraphics<3->[width=0.6\textwidth,page=3]{ptp_in_disk}%
+\end{center}
+\end{figure}
 \end{frame}
 
 % greedy clustering by quorum clustering
@@ -382,7 +430,23 @@ diagram $\tildeM$ of complexity $O(\alert{(mn/k)}\eps^{-2}\log\eps^{-1})$.
 \item Let $X$ be the set of centers $x_i$ from the greedy clustering,
 	and $\tildeM = \Vor(X)$ with each $\VorRegion(x_i)$ assigned $M_{x_i}$.
 \end{itemize}
-%TODO figure
+\begin{figure}
+\begin{center}
+\includegraphics<1>[width=0.7\textwidth,page=1]{cluster_proof}%
+\includegraphics<2>[width=0.7\textwidth,page=2]{cluster_proof}%
+\includegraphics<3>[width=0.7\textwidth,page=3]{cluster_proof}%
+\includegraphics<4->[width=0.7\textwidth,page=4]{cluster_proof}%
+\end{center}
+\end{figure}
+\end{frame}
+
+% cont.
+\begin{frame}{Greedy clustering proof of approximation}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\textwidth,page=4]{cluster_proof}%
+\end{center}
+\end{figure}
 \begin{itemize}
 \item $\cost(M_{x_i}, t) \leq (1+6\cdot 2^{1/p}) \cost^*(t)$
 \item Using grids, $(1+\eps)$ approximate diagram of size
@@ -397,9 +461,16 @@ diagram $\tildeM$ of complexity $O(\alert{(mn/k)}\eps^{-2}\log\eps^{-1})$.
 % \Omega(n) translations where they are perfectly aligned with \geq k points in common (cost^*(t) = 0)
 % at least \Omega(n) faces in any constant-approx diagram
 \begin{itemize}
-\item For $k = c\cdot\min(m, n)$, $c = \Omega(1)$, $O(mn/k)$ size is tight.
+\item For $k = c\cdot\min(m, n)$, constant $c$:
 \end{itemize}
-%TODO figure
+\begin{figure}
+\begin{center}
+\includegraphics<1>[width=0.7\textwidth,page=1]{lower_bound_big_k}%
+\includegraphics<2>[width=0.7\textwidth,page=2]{lower_bound_big_k}%
+\includegraphics<3>[width=0.7\textwidth,page=3]{lower_bound_big_k}%
+\includegraphics<4->[width=0.7\textwidth,page=4]{lower_bound_big_k}%
+\end{center}
+\end{figure}
 \end{frame}
 
 % open questions
