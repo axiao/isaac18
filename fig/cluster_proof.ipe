@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20181211082226" modified="D:20181211083416"/>
+<info created="D:20181211082226" modified="D:20181212053826"/>
 <preamble>\usepackage{amsmath,amssymb,mathtools,stmaryrd}
 \usepackage{euscript}
 
@@ -261,7 +261,10 @@ h
 <layer name="T"/>
 <layer name="t_disk"/>
 <layer name="x_disk"/>
-<view layers="frame T" active="x_disk"/>
+<layer name="x_disk_label1"/>
+<layer name="x_disk_label2"/>
+<layer name="t_x_distance"/>
+<view layers="frame T" active="t_x_distance"/>
 <path layer="frame" stroke="black">
 64 640 m
 64 320 l
@@ -308,19 +311,28 @@ h
 <path stroke="black" fill="blue" opacity="30%">
 78.4398 0 0 78.4398 197.188 447.18 e
 </path>
-<path stroke="black" arrow="normal/small">
+<path matrix="2.00921 0 0 -0.70128 -199.003 760.778" stroke="black" arrow="normal/small">
 197.188 447.18 m
 167.489 519.78 l
 </path>
-<text transformations="translations" pos="188.904 437.121" stroke="black" type="label" width="9.011" height="4.294" depth="1.49" valign="baseline" style="math">x_i</text>
-<text matrix="1 0 0 1 -7.69231 6.50888" transformations="translations" pos="196.597 477.949" stroke="black" type="label" width="7.812" height="4.294" depth="1.49" valign="baseline" style="math">r_i</text>
+<text matrix="1 0 0 1 -9.10542 12.8483" transformations="translations" pos="188.904 437.121" stroke="black" type="label" width="9.011" height="4.294" depth="1.49" valign="baseline" style="math">x_i</text>
+<text layer="x_disk_label1" matrix="1 0 0 1 -34.6064 -72.0803" transformations="translations" pos="196.597 477.949" stroke="black" type="label" width="7.812" height="4.294" depth="1.49" valign="baseline" style="math">r_i</text>
+<text layer="x_disk_label2" matrix="1 0 0 1 -34.6064 -72.0803" transformations="translations" pos="196.597 477.949" stroke="black" type="label" width="85.711" height="8.846" depth="2.49" valign="baseline" style="math">r_i \leq 2 \cdot 2^{1/p}\cost^*(t)</text>
+<path layer="t_x_distance" matrix="0.915353 0 0 0.915353 19.8748 40.6106" stroke="darkred" pen="fat" arrow="linear/normal" rarrow="linear/normal">
+197.188 447.18 m
+272 512 l
+</path>
+<text matrix="1 0 0 1 -2.69141 -5.38282" transformations="translations" pos="241.72 474.572" stroke="black" type="label" width="112.647" height="8.846" depth="2.49" valign="baseline" style="math">\|t - x_i\| \leq 3\cdot 2^{1/p}\cost^*(t)</text>
 </page>
 <page>
 <layer name="frame"/>
 <layer name="T"/>
 <layer name="t_disk"/>
 <layer name="x_disk"/>
-<view layers="frame T t_disk" active="x_disk"/>
+<layer name="x_disk_label1"/>
+<layer name="x_disk_label2"/>
+<layer name="t_x_distance"/>
+<view layers="frame T t_disk" active="t_x_distance"/>
 <path layer="frame" stroke="black">
 64 640 m
 64 320 l
@@ -367,19 +379,28 @@ h
 <path stroke="black" fill="blue" opacity="30%">
 78.4398 0 0 78.4398 197.188 447.18 e
 </path>
-<path stroke="black" arrow="normal/small">
+<path matrix="2.00921 0 0 -0.70128 -199.003 760.778" stroke="black" arrow="normal/small">
 197.188 447.18 m
 167.489 519.78 l
 </path>
-<text transformations="translations" pos="188.904 437.121" stroke="black" type="label" width="9.011" height="4.294" depth="1.49" valign="baseline" style="math">x_i</text>
-<text matrix="1 0 0 1 -7.69231 6.50888" transformations="translations" pos="196.597 477.949" stroke="black" type="label" width="7.812" height="4.294" depth="1.49" valign="baseline" style="math">r_i</text>
+<text matrix="1 0 0 1 -9.10542 12.8483" transformations="translations" pos="188.904 437.121" stroke="black" type="label" width="9.011" height="4.294" depth="1.49" valign="baseline" style="math">x_i</text>
+<text layer="x_disk_label1" matrix="1 0 0 1 -34.6064 -72.0803" transformations="translations" pos="196.597 477.949" stroke="black" type="label" width="7.812" height="4.294" depth="1.49" valign="baseline" style="math">r_i</text>
+<text layer="x_disk_label2" matrix="1 0 0 1 -34.6064 -72.0803" transformations="translations" pos="196.597 477.949" stroke="black" type="label" width="85.711" height="8.846" depth="2.49" valign="baseline" style="math">r_i \leq 2 \cdot 2^{1/p}\cost^*(t)</text>
+<path layer="t_x_distance" matrix="0.915353 0 0 0.915353 19.8748 40.6106" stroke="darkred" pen="fat" arrow="linear/normal" rarrow="linear/normal">
+197.188 447.18 m
+272 512 l
+</path>
+<text matrix="1 0 0 1 -2.69141 -5.38282" transformations="translations" pos="241.72 474.572" stroke="black" type="label" width="112.647" height="8.846" depth="2.49" valign="baseline" style="math">\|t - x_i\| \leq 3\cdot 2^{1/p}\cost^*(t)</text>
 </page>
 <page>
 <layer name="frame"/>
 <layer name="T"/>
 <layer name="t_disk"/>
 <layer name="x_disk"/>
-<view layers="frame T t_disk x_disk" active="x_disk"/>
+<layer name="x_disk_label1"/>
+<layer name="x_disk_label2"/>
+<layer name="t_x_distance"/>
+<view layers="frame T t_disk x_disk x_disk_label1" active="t_x_distance"/>
 <path layer="frame" stroke="black">
 64 640 m
 64 320 l
@@ -426,19 +447,28 @@ h
 <path stroke="black" fill="blue" opacity="30%">
 78.4398 0 0 78.4398 197.188 447.18 e
 </path>
-<path stroke="black" arrow="normal/small">
+<path matrix="2.00921 0 0 -0.70128 -199.003 760.778" stroke="black" arrow="normal/small">
 197.188 447.18 m
 167.489 519.78 l
 </path>
-<text transformations="translations" pos="188.904 437.121" stroke="black" type="label" width="9.011" height="4.294" depth="1.49" valign="baseline" style="math">x_i</text>
-<text matrix="1 0 0 1 -2.36687 -5.32544" transformations="translations" pos="196.597 477.949" stroke="black" type="label" width="7.812" height="4.294" depth="1.49" valign="baseline" style="math">r_i</text>
+<text matrix="1 0 0 1 -9.10542 12.8483" transformations="translations" pos="188.904 437.121" stroke="black" type="label" width="9.011" height="4.294" depth="1.49" valign="baseline" style="math">x_i</text>
+<text layer="x_disk_label1" matrix="1 0 0 1 -34.6064 -72.0803" transformations="translations" pos="196.597 477.949" stroke="black" type="label" width="7.812" height="4.294" depth="1.49" valign="baseline" style="math">r_i</text>
+<text layer="x_disk_label2" matrix="1 0 0 1 -34.6064 -72.0803" transformations="translations" pos="196.597 477.949" stroke="black" type="label" width="85.711" height="8.846" depth="2.49" valign="baseline" style="math">r_i \leq 2 \cdot 2^{1/p}\cost^*(t)</text>
+<path layer="t_x_distance" matrix="0.915353 0 0 0.915353 19.8748 40.6106" stroke="darkred" pen="fat" arrow="linear/normal" rarrow="linear/normal">
+197.188 447.18 m
+272 512 l
+</path>
+<text matrix="1 0 0 1 -2.69141 -5.38282" transformations="translations" pos="241.72 474.572" stroke="black" type="label" width="112.647" height="8.846" depth="2.49" valign="baseline" style="math">\|t - x_i\| \leq 3\cdot 2^{1/p}\cost^*(t)</text>
 </page>
 <page>
 <layer name="frame"/>
 <layer name="T"/>
 <layer name="t_disk"/>
 <layer name="x_disk"/>
-<view layers="frame T t_disk x_disk" active="x_disk"/>
+<layer name="x_disk_label1"/>
+<layer name="x_disk_label2"/>
+<layer name="t_x_distance"/>
+<view layers="frame T t_disk x_disk x_disk_label2" active="t_x_distance"/>
 <path layer="frame" stroke="black">
 64 640 m
 64 320 l
@@ -485,11 +515,85 @@ h
 <path stroke="black" fill="blue" opacity="30%">
 78.4398 0 0 78.4398 197.188 447.18 e
 </path>
-<path stroke="black" arrow="normal/small">
+<path matrix="2.00921 0 0 -0.70128 -199.003 760.778" stroke="black" arrow="normal/small">
 197.188 447.18 m
 167.489 519.78 l
 </path>
-<text transformations="translations" pos="188.904 437.121" stroke="black" type="label" width="9.011" height="4.294" depth="1.49" valign="baseline" style="math">x_i</text>
-<text matrix="1 0 0 1 -2.36687 -5.32544" transformations="translations" pos="196.597 477.949" stroke="black" type="label" width="85.711" height="8.846" depth="2.49" valign="baseline" style="math">r_i  \leq 2 \cdot 2^{1/p}\cost^*(t)</text>
+<text matrix="1 0 0 1 -9.10542 12.8483" transformations="translations" pos="188.904 437.121" stroke="black" type="label" width="9.011" height="4.294" depth="1.49" valign="baseline" style="math">x_i</text>
+<text layer="x_disk_label1" matrix="1 0 0 1 -34.6064 -72.0803" transformations="translations" pos="196.597 477.949" stroke="black" type="label" width="7.812" height="4.294" depth="1.49" valign="baseline" style="math">r_i</text>
+<text layer="x_disk_label2" matrix="1 0 0 1 -34.6064 -72.0803" transformations="translations" pos="196.597 477.949" stroke="black" type="label" width="85.711" height="8.846" depth="2.49" valign="baseline" style="math">r_i \leq 2 \cdot 2^{1/p}\cost^*(t)</text>
+<path layer="t_x_distance" matrix="0.915353 0 0 0.915353 19.8748 40.6106" stroke="darkred" pen="fat" arrow="linear/normal" rarrow="linear/normal">
+197.188 447.18 m
+272 512 l
+</path>
+<text matrix="1 0 0 1 -2.69141 -5.38282" transformations="translations" pos="241.72 474.572" stroke="black" type="label" width="112.647" height="8.846" depth="2.49" valign="baseline" style="math">\|t - x_i\| \leq 3\cdot 2^{1/p}\cost^*(t)</text>
+</page>
+<page>
+<layer name="frame"/>
+<layer name="T"/>
+<layer name="t_disk"/>
+<layer name="x_disk"/>
+<layer name="x_disk_label1"/>
+<layer name="x_disk_label2"/>
+<layer name="t_x_distance"/>
+<view layers="frame T t_disk x_disk x_disk_label2 t_x_distance" active="t_x_distance"/>
+<path layer="frame" stroke="black">
+64 640 m
+64 320 l
+512 320 l
+512 640 l
+h
+</path>
+<use layer="T" name="mark/disk(sx)" pos="256 560" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="352 528" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="368 464" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="272 464" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="176 480" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="192 576" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="224 432" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="240 384" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="144 416" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 384" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="384 368" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="432 432" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="400 384" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="336 416" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="352 576" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="448 496" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="416 480" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="256 528" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="272 496" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="176 544" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="176 400" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 368" size="normal" stroke="black"/>
+<use matrix="1 0 0 1 6.79792 -5.10378" name="mark/disk(sx)" pos="304 544" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 480" size="normal" stroke="black"/>
+<text transformations="translations" pos="128 576" stroke="black" type="label" width="7.206" height="6.808" depth="0" valign="baseline" style="math">T</text>
+<use layer="t_disk" name="mark/cross(sx)" pos="272 512" size="large" stroke="black"/>
+<path stroke="black" fill="red" opacity="30%">
+58.8562 0 0 58.8562 272 512 e
+</path>
+<text transformations="translations" pos="259.319 506.352" stroke="black" type="label" width="3.598" height="6.128" depth="0" valign="baseline" style="math">t</text>
+<path stroke="black" arrow="normal/small">
+272 512 m
+241.387 562.268 l
+</path>
+<text matrix="1 0 0 1 -14.2012 7.10059" transformations="translations" pos="266.419 540.671" stroke="black" type="label" width="52.44" height="8.846" depth="2.49" valign="baseline" style="math">2^{1/p}\cost^*(t)</text>
+<use layer="x_disk" name="mark/cross(sx)" pos="197.188 447.18" size="large" stroke="black"/>
+<path stroke="black" fill="blue" opacity="30%">
+78.4398 0 0 78.4398 197.188 447.18 e
+</path>
+<path matrix="2.00921 0 0 -0.70128 -199.003 760.778" stroke="black" arrow="normal/small">
+197.188 447.18 m
+167.489 519.78 l
+</path>
+<text matrix="1 0 0 1 -9.10542 12.8483" transformations="translations" pos="188.904 437.121" stroke="black" type="label" width="9.011" height="4.294" depth="1.49" valign="baseline" style="math">x_i</text>
+<text layer="x_disk_label1" matrix="1 0 0 1 -34.6064 -72.0803" transformations="translations" pos="196.597 477.949" stroke="black" type="label" width="7.812" height="4.294" depth="1.49" valign="baseline" style="math">r_i</text>
+<text layer="x_disk_label2" matrix="1 0 0 1 -34.6064 -72.0803" transformations="translations" pos="196.597 477.949" stroke="black" type="label" width="85.711" height="8.846" depth="2.49" valign="baseline" style="math">r_i \leq 2 \cdot 2^{1/p}\cost^*(t)</text>
+<path layer="t_x_distance" matrix="0.915353 0 0 0.915353 19.8748 40.6106" stroke="darkred" pen="fat" arrow="linear/normal" rarrow="linear/normal">
+197.188 447.18 m
+272 512 l
+</path>
+<text matrix="1 0 0 1 -2.69141 -5.38282" transformations="translations" pos="241.72 474.572" stroke="black" type="label" width="112.647" height="8.846" depth="2.49" valign="baseline" style="math">\|t - x_i\| \leq 3\cdot 2^{1/p}\cost^*(t)</text>
 </page>
 </ipe>

@@ -81,7 +81,7 @@
 % set beamer highlight color (alert)
 \setbeamercolor{alerted text}{fg=BrickRed}
 
-\newcommand{\mycite}[1]{{\color{violet}\lbrack #1\rbrack}}
+\newcommand{\mycite}[1]{{\color{LimeGreen}\lbrack #1\rbrack}}
 \newcommand{\etal}{\textit{et~al.}}
 \newcommand{\softO}{\widetilde{O}}
 \newcommand{\reals}{\mathbb{R}}
@@ -174,7 +174,9 @@
 	\begin{equation*}
 	\cost(M, t) \coloneqq \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{a+t-b}^p\right]^{1/p}
 	\end{equation*}
+\pause
 \item $p = 2$: root-mean-squared cost
+\pause
 \item For fixed $t$, minimum $M$ computable in $\poly(k, m, n)$ time, \\
 	e.g. by Hungarian algorithm.
 \end{itemize}
@@ -261,7 +263,7 @@
 \end{frame}
 
 % Lipschitz property --> point-to-point translations
-\begin{frame}{Point-to-point translations}
+\begin{frame}{Point-to-point translations \mycite{Cabello~{\etal} 08}}
 % originally used by Cabello for for EMD under translations
 % punchline: Vor(T) is constant approximate diagram!
 \begin{itemize}
@@ -275,16 +277,16 @@
 \includegraphics<5->[width=0.6\textwidth,page=5]{point-to-point}%
 \end{center}
 \end{figure}
-\item Claim: Let $\tildeM$ be $\Vor(T)$, with each $\VorRegion(t_{ba})$ assigned the optimal $k$-matching at $t_{ba}$.
+\item<6-> Claim: Let $\tildeM$ be $\Vor(T)$, with each $\VorRegion(t_{ba})$ assigned the optimal $k$-matching at $t_{ba}$.
 	Then, $\tildeM$ is a $O(1)$-approximate diagram.
 \end{itemize}
 \end{frame}
 
 % key idea: L_p cost has Lipschitz property
-\begin{frame}{Lipschitz continuity for $\cost^*(t)$}
+\begin{frame}{Lipschitz continuity for $L_p$-cost}
 % ``moving a short distance cannot increase \cost*(t) by much''
 \begin{equation*}
-\cost^*(t) \coloneqq \min_{\text{$k$-matching $M$}} \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{a+t-b}^p\right]^{1/p}
+\cost(M, t) \coloneqq \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{a+t-b}^p\right]^{1/p}
 \end{equation*}
 \begin{lemma}[Lipschitz condition]
 Given $t, \Delta \in \reals^2$, let $M_t$ be the optimal $k$-matching at $t$. \\
@@ -305,10 +307,10 @@ Then $\cost(M_t, t+\Delta) \leq \cost^*(t) + \norm{\Delta}$.
 \end{itemize}
 \begin{equation*}
 \begin{aligned}
-\cost^*(t) &= \min_{\text{$k$-matching $M$}} \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{a+t-b}^p\right]^{1/p} \\
-	&= \min_{\text{$k$-matching $M$}} \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{t - \alert{t_{ba}}}^p\right]^{1/p} \\
-	&\geq \min_{\text{$k$-matching $M$}} \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{t - \alert{t_0}}^p\right]^{1/p} \\
-	&= \norm{t - t_0}
+\onslide<1->{\cost^*(t) &= \min_{\text{$k$-matching $M$}} \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{a+t-b}^p\right]^{1/p} \\}
+	\onslide<2->{&= \min_{\text{$k$-matching $M$}} \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{t - \alert{t_{ba}}}^p\right]^{1/p} \\}
+	\onslide<3->{&\geq \min_{\text{$k$-matching $M$}} \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{t - \alert{t_0}}^p\right]^{1/p} \\}
+	\onslide<4->{&= \norm{t - t_0}}
 \end{aligned}
 \end{equation*}
 \end{frame}
@@ -325,10 +327,10 @@ Then $\cost(M_t, t+\Delta) \leq \cost^*(t) + \norm{\Delta}$.
 \end{itemize}
 \begin{equation*}
 \begin{aligned}
-\cost(M_{t_0}, t) &\leq \cost^*(t_0) + \norm{t - t_0} & \text{(Lipschitz cond.)}\\
-	&\leq \cost^*(t) + 2\norm{t - t_0} & \text{(Lipschitz cond.)}\\
-	&\leq \cost^*(t) + 2\cost^*(t) \\
-	&= 3\cost^*(t)
+\onslide<2->{\cost(M_{t_0}, t) &\leq \cost^*(t_0) + \norm{t - t_0} & \text{(Lipschitz cond.)}\\}
+	\onslide<3->{&\leq \cost^*(t) + 2\norm{t - t_0} & \text{(Lipschitz cond.)}\\}
+	\onslide<4->{&\leq \cost^*(t) + 2\cost^*(t) \\}
+	\onslide<5->{&= 3\cost^*(t)}
 \end{aligned}
 \end{equation*}
 \end{frame}
@@ -346,6 +348,7 @@ Then $\cost(M_t, t+\Delta) \leq \cost^*(t) + \norm{\Delta}$.
 \item $(1+\eps)$ approximate diagram of size
 	$O(\abs{T}\eps^{-2}\log\eps^{-1}) = O((mn)\eps^{-2}\log\eps^{-1})$
 \end{itemize}
+\pause
 \begin{theorem}
 In $\poly(k, m, n, \eps^{-1})$ time, can construct a $(1+\eps)$ approximate
 diagram $\tildeM$ of complexity $O(\alert{(mn/k)}\eps^{-2}\log\eps^{-1})$.
@@ -376,7 +379,10 @@ diagram $\tildeM$ of complexity $O(\alert{(mn/k)}\eps^{-2}\log\eps^{-1})$.
 \end{equation*}
 \begin{itemize}
 \item At most $k/2$ pairs $(a, b) \in M_t$ have $\norm{a+t-b} \geq 2^{1/p}\cost^*(t)$.
+\pause
 \item At most $k/2$ pairs $(a, b) \in M_t$ have $\norm{t-\alert{t_{ab}}} \geq 2^{1/p}\cost^*(t)$.
+\pause
+\item \alert{At least} $k/2$ pairs $(a, b) \in M_t$ have $\norm{t-\alert{t_{ab}}} \alert{\leq} 2^{1/p}\cost^*(t)$.
 \end{itemize}
 \end{frame}
 
@@ -384,7 +390,7 @@ diagram $\tildeM$ of complexity $O(\alert{(mn/k)}\eps^{-2}\log\eps^{-1})$.
 \begin{frame}{Averaging argument (cont.)}
 % ``for matching M_t of cost \cost^*(t), there are \leq k/2 pairs with \norm{t - t_ab} \geq 2^{1/p}\cost^*(t)''
 \begin{itemize}
-\item At most $k/2$ pairs $(a, b) \in M_t$ have $\norm{t-\alert{t_{ab}}} \geq 2^{1/p}\cost^*(t)$.
+\item \alert{At least} $k/2$ pairs $(a, b) \in M_t$ have $\norm{t-\alert{t_{ab}}} \alert{\leq} 2^{1/p}\cost^*(t)$.
 \end{itemize}
 \begin{figure}
 \begin{center}
@@ -408,8 +414,10 @@ diagram $\tildeM$ of complexity $O(\alert{(mn/k)}\eps^{-2}\log\eps^{-1})$.
 \end{enumerate}
 %TODO replace above with figure?
 \begin{itemize}
+\pause
 \item \EMPH{Quorum clustering}\\
 	$2$-approx. algorithm in $O(\abs{T}\polylog n)$ time \mycite{Carmi~{\etal} 05}
+\pause
 \item $O(\abs{T}/k) = O(mn/k)$ clusters.
 \end{itemize}
 \end{frame}
@@ -435,7 +443,8 @@ diagram $\tildeM$ of complexity $O(\alert{(mn/k)}\eps^{-2}\log\eps^{-1})$.
 \includegraphics<1>[width=0.7\textwidth,page=1]{cluster_proof}%
 \includegraphics<2>[width=0.7\textwidth,page=2]{cluster_proof}%
 \includegraphics<3>[width=0.7\textwidth,page=3]{cluster_proof}%
-\includegraphics<4->[width=0.7\textwidth,page=4]{cluster_proof}%
+\includegraphics<4>[width=0.7\textwidth,page=4]{cluster_proof}%
+\includegraphics<5->[width=0.7\textwidth,page=5]{cluster_proof}%
 \end{center}
 \end{figure}
 \end{frame}
@@ -444,12 +453,12 @@ diagram $\tildeM$ of complexity $O(\alert{(mn/k)}\eps^{-2}\log\eps^{-1})$.
 \begin{frame}{Greedy clustering proof of approximation}
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.7\textwidth,page=4]{cluster_proof}%
+\includegraphics[width=0.7\textwidth,page=5]{cluster_proof}%
 \end{center}
 \end{figure}
 \begin{itemize}
 \item $\cost(M_{x_i}, t) \leq (1+6\cdot 2^{1/p}) \cost^*(t)$
-\item Using grids, $(1+\eps)$ approximate diagram of size
+\item Using grids, $(1+\eps)$ approx. diagram of size
 	$O((mn/k) \eps^{-2}\log \eps^{-1})$.
 \end{itemize}
 \end{frame}
