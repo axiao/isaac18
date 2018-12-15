@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
-<ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20181211063338" modified="D:20181211070519"/>
+<ipe version="70206" creator="Ipe 7.2.6">
+<info created="D:20181211063338" modified="D:20181215153224"/>
 <preamble>\usepackage{amsmath,amssymb,mathtools,stmaryrd}
 \usepackage{euscript}
 
@@ -258,13 +258,16 @@ h
 </ipestyle>
 <page>
 <layer name="frame"/>
+<layer name="axis"/>
 <layer name="A"/>
 <layer name="B"/>
 <layer name="t1"/>
 <layer name="A+t1"/>
 <layer name="more_t"/>
 <layer name="even_more_t"/>
-<view layers="frame A B" active="even_more_t"/>
+<layer name="t_vec_centered"/>
+<layer name="t_points"/>
+<view layers="frame A B" active="t_points"/>
 <path layer="frame" stroke="black">
 64 576 m
 64 256 l
@@ -273,173 +276,172 @@ h
 h
 </path>
 <text transformations="translations" pos="80 272" stroke="black" type="label" width="11.665" height="8.11" depth="0" valign="baseline" style="math">\mathbb{R}^2</text>
-<path layer="A" stroke="red" pen="heavier">
+<path layer="A" matrix="1 0 0 1 0 -128" stroke="red" pen="heavier">
 128 512 m
 128 448 l
 192 448 l
 192 512 l
 h
 </path>
-<use name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
-<use name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
-<use name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
-<path layer="B" stroke="blue" pen="heavier">
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="B" matrix="1 0 0 1 0 16" stroke="blue" pen="heavier">
 256 528 m
 256 320 l
 480 320 l
 480 528 l
 h
 </path>
-<use name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="400 480" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="400 400" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="352 432" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="320 416" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="336 384" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="432 352" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
-<path layer="t1" stroke="black" arrow="arc/small">
-160 464 m
-250.32 0 0 250.32 336 642 400 400 a
-</path>
-<path layer="A+t1" matrix="1 0 0 1 240 -64" stroke="red" pen="heavier">
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 32" name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
+<path layer="A+t1" matrix="1 0 0 1 147.499 -78.6005" stroke="red" pen="heavier">
 128 512 m
 128 448 l
 192 448 l
 192 512 l
 h
 </path>
-<use matrix="1 0 0 1 240 -64" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
-<use matrix="1 0 0 1 240 -64" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
-<use matrix="1 0 0 1 240 -64" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
-<path layer="more_t" stroke="black" arrow="arc/small">
-160 464 m
-162.338 0 0 162.338 280 573.333 320 416 a
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="axis" stroke="black" arrow="normal/small" rarrow="normal/small">
+128 560 m
+128 272 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-250.482 0 0 250.482 359.599 615.332 320 368 a
+<path stroke="black" arrow="normal/small" rarrow="normal/small">
+80 320 m
+496 320 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-216.89 0 0 216.89 328.343 600.755 336 384 a
+<text matrix="1 0 0 1 5.59813 4.1986" transformations="translations" pos="112 304" stroke="black" type="label" width="4.981" height="6.42" depth="0" valign="baseline" style="math">0</text>
+<path layer="t1" stroke="black" pen="heavier" arrow="normal/normal">
+176 352 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-317.122 0 0 317.122 387.33 685.104 384 368 a
+<path layer="more_t" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-211.418 0 0 211.418 353.826 548.434 432 352 a
+<path stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-263.935 0 0 263.935 296.333 689.997 352 432 a
+<path stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-97.7598 0 0 97.7598 229.437 532.815 320 496 a
+<path stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-237.769 0 0 237.769 266.356 676.656 400 480 a
+<path layer="even_more_t" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-512.288 0 0 512.288 331.267 946.812 448 448 a
+<path stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
 </path>
-<path layer="even_more_t" stroke="black" arrow="arc/small">
-176 480 m
-237.833 0 0 -237.833 113.15 250.621 320 368 a
+<path stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-277.604 0 0 -277.604 121.481 207.802 336 384 a
+<path stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-183.496 0 0 -183.496 180.695 296.564 320 416 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-114.128 0 0 -114.128 257.739 400.352 320 496 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-169.505 0 0 -169.505 288 352.768 400 480 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-270.719 0 0 -270.719 284.714 232.069 448 448 a
+<path matrix="1 0 0 1 0 0" stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-121.769 0 0 -121.769 242.774 378.172 352 432 a
+<path layer="t_vec_centered" matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-193.532 0 0 -193.532 207.318 289.018 384 368 a
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-186.702 0 0 -186.702 250.376 308.753 432 352 a
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-231.247 0 0 -231.247 221.298 253.233 400 400 a
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-320 496 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-400 480 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-448 448 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-352 432 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-320 416 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-336 384 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-320 368 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-384 368 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-400 400 l
-</path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-432 352 l
-</path>
+<use layer="t_points" name="mark/disk(sx)" pos="272 480.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 496.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 464.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="416 448.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="400 432.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="432 416.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 384.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="272 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="352 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="336 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="368 336.046" size="normal" stroke="black"/>
+<text transformations="translations" pos="230.771 487.99" stroke="black" type="label" width="7.206" height="6.808" depth="0" valign="baseline" style="math">T</text>
 </page>
 <page>
 <layer name="frame"/>
+<layer name="axis"/>
 <layer name="A"/>
 <layer name="B"/>
 <layer name="t1"/>
 <layer name="A+t1"/>
 <layer name="more_t"/>
 <layer name="even_more_t"/>
-<view layers="frame A B t1" active="even_more_t"/>
+<layer name="t_vec_centered"/>
+<layer name="t_points"/>
+<view layers="frame A B t1" active="t_points"/>
 <path layer="frame" stroke="black">
 64 576 m
 64 256 l
@@ -447,174 +449,173 @@ h
 512 576 l
 h
 </path>
-<text transformations="translations" pos="80 272" stroke="black" type="label" valign="baseline" style="math">\mathbb{R}^2</text>
-<path layer="A" stroke="red" pen="heavier">
+<text transformations="translations" pos="80 272" stroke="black" type="label" width="11.665" height="8.11" depth="0" valign="baseline" style="math">\mathbb{R}^2</text>
+<path layer="A" matrix="1 0 0 1 0 -128" stroke="red" pen="heavier">
 128 512 m
 128 448 l
 192 448 l
 192 512 l
 h
 </path>
-<use name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
-<use name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
-<use name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
-<path layer="B" stroke="blue" pen="heavier">
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="B" matrix="1 0 0 1 0 16" stroke="blue" pen="heavier">
 256 528 m
 256 320 l
 480 320 l
 480 528 l
 h
 </path>
-<use name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="400 480" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="400 400" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="352 432" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="320 416" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="336 384" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="432 352" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
-<path layer="t1" stroke="black" arrow="arc/small">
-160 464 m
-250.32 0 0 250.32 336 642 400 400 a
-</path>
-<path layer="A+t1" matrix="1 0 0 1 240 -64" stroke="red" pen="heavier">
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 32" name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
+<path layer="A+t1" matrix="1 0 0 1 147.499 -78.6005" stroke="red" pen="heavier">
 128 512 m
 128 448 l
 192 448 l
 192 512 l
 h
 </path>
-<use matrix="1 0 0 1 240 -64" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
-<use matrix="1 0 0 1 240 -64" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
-<use matrix="1 0 0 1 240 -64" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
-<path layer="more_t" stroke="black" arrow="arc/small">
-160 464 m
-162.338 0 0 162.338 280 573.333 320 416 a
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="axis" stroke="black" arrow="normal/small" rarrow="normal/small">
+128 560 m
+128 272 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-250.482 0 0 250.482 359.599 615.332 320 368 a
+<path stroke="black" arrow="normal/small" rarrow="normal/small">
+80 320 m
+496 320 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-216.89 0 0 216.89 328.343 600.755 336 384 a
+<text matrix="1 0 0 1 5.59813 4.1986" transformations="translations" pos="112 304" stroke="black" type="label" width="4.981" height="6.42" depth="0" valign="baseline" style="math">0</text>
+<path layer="t1" stroke="black" pen="heavier" arrow="normal/normal">
+176 352 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-317.122 0 0 317.122 387.33 685.104 384 368 a
+<path layer="more_t" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-211.418 0 0 211.418 353.826 548.434 432 352 a
+<path stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-263.935 0 0 263.935 296.333 689.997 352 432 a
+<path stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-97.7598 0 0 97.7598 229.437 532.815 320 496 a
+<path stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-237.769 0 0 237.769 266.356 676.656 400 480 a
+<path layer="even_more_t" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-512.288 0 0 512.288 331.267 946.812 448 448 a
+<path stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
 </path>
-<path layer="even_more_t" stroke="black" arrow="arc/small">
-176 480 m
-237.833 0 0 -237.833 113.15 250.621 320 368 a
+<path stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-277.604 0 0 -277.604 121.481 207.802 336 384 a
+<path stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-183.496 0 0 -183.496 180.695 296.564 320 416 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-114.128 0 0 -114.128 257.739 400.352 320 496 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-169.505 0 0 -169.505 288 352.768 400 480 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-270.719 0 0 -270.719 284.714 232.069 448 448 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-121.769 0 0 -121.769 242.774 378.172 352 432 a
+<path layer="t_vec_centered" matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-193.532 0 0 -193.532 207.318 289.018 384 368 a
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-186.702 0 0 -186.702 250.376 308.753 432 352 a
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-231.247 0 0 -231.247 221.298 253.233 400 400 a
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-320 496 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-400 480 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-448 448 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-352 432 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-320 416 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-336 384 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-320 368 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-384 368 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-400 400 l
-</path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-432 352 l
-</path>
+<use layer="t_points" name="mark/disk(sx)" pos="272 480.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 496.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 464.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="416 448.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="400 432.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="432 416.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 384.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="272 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="352 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="336 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="368 336.046" size="normal" stroke="black"/>
+<text transformations="translations" pos="230.771 487.99" stroke="black" type="label" width="7.206" height="6.808" depth="0" valign="baseline" style="math">T</text>
 </page>
 <page>
 <layer name="frame"/>
+<layer name="axis"/>
 <layer name="A"/>
 <layer name="B"/>
 <layer name="t1"/>
 <layer name="A+t1"/>
 <layer name="more_t"/>
 <layer name="even_more_t"/>
-<view layers="frame A B t1 A+t1" active="even_more_t"/>
+<layer name="t_vec_centered"/>
+<layer name="t_points"/>
+<view layers="frame A B t1 A+t1" active="t_points"/>
 <path layer="frame" stroke="black">
 64 576 m
 64 256 l
@@ -622,174 +623,173 @@ h
 512 576 l
 h
 </path>
-<text transformations="translations" pos="80 272" stroke="black" type="label" valign="baseline" style="math">\mathbb{R}^2</text>
-<path layer="A" stroke="red" pen="heavier">
+<text transformations="translations" pos="80 272" stroke="black" type="label" width="11.665" height="8.11" depth="0" valign="baseline" style="math">\mathbb{R}^2</text>
+<path layer="A" matrix="1 0 0 1 0 -128" stroke="red" pen="heavier">
 128 512 m
 128 448 l
 192 448 l
 192 512 l
 h
 </path>
-<use name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
-<use name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
-<use name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
-<path layer="B" stroke="blue" pen="heavier">
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="B" matrix="1 0 0 1 0 16" stroke="blue" pen="heavier">
 256 528 m
 256 320 l
 480 320 l
 480 528 l
 h
 </path>
-<use name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="400 480" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="400 400" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="352 432" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="320 416" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="336 384" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="432 352" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
-<path layer="t1" stroke="black" arrow="arc/small">
-160 464 m
-250.32 0 0 250.32 336 642 400 400 a
-</path>
-<path layer="A+t1" matrix="1 0 0 1 240 -64" stroke="red" pen="heavier">
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 32" name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
+<path layer="A+t1" matrix="1 0 0 1 147.499 -78.6005" stroke="red" pen="heavier">
 128 512 m
 128 448 l
 192 448 l
 192 512 l
 h
 </path>
-<use matrix="1 0 0 1 240 -64" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
-<use matrix="1 0 0 1 240 -64" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
-<use matrix="1 0 0 1 240 -64" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
-<path layer="more_t" stroke="black" arrow="arc/small">
-160 464 m
-162.338 0 0 162.338 280 573.333 320 416 a
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="axis" stroke="black" arrow="normal/small" rarrow="normal/small">
+128 560 m
+128 272 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-250.482 0 0 250.482 359.599 615.332 320 368 a
+<path stroke="black" arrow="normal/small" rarrow="normal/small">
+80 320 m
+496 320 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-216.89 0 0 216.89 328.343 600.755 336 384 a
+<text matrix="1 0 0 1 5.59813 4.1986" transformations="translations" pos="112 304" stroke="black" type="label" width="4.981" height="6.42" depth="0" valign="baseline" style="math">0</text>
+<path layer="t1" stroke="black" pen="heavier" arrow="normal/normal">
+176 352 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-317.122 0 0 317.122 387.33 685.104 384 368 a
+<path layer="more_t" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-211.418 0 0 211.418 353.826 548.434 432 352 a
+<path stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-263.935 0 0 263.935 296.333 689.997 352 432 a
+<path stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-97.7598 0 0 97.7598 229.437 532.815 320 496 a
+<path stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-237.769 0 0 237.769 266.356 676.656 400 480 a
+<path layer="even_more_t" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-512.288 0 0 512.288 331.267 946.812 448 448 a
+<path stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
 </path>
-<path layer="even_more_t" stroke="black" arrow="arc/small">
-176 480 m
-237.833 0 0 -237.833 113.15 250.621 320 368 a
+<path stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-277.604 0 0 -277.604 121.481 207.802 336 384 a
+<path stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-183.496 0 0 -183.496 180.695 296.564 320 416 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-114.128 0 0 -114.128 257.739 400.352 320 496 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-169.505 0 0 -169.505 288 352.768 400 480 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-270.719 0 0 -270.719 284.714 232.069 448 448 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-121.769 0 0 -121.769 242.774 378.172 352 432 a
+<path layer="t_vec_centered" matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-193.532 0 0 -193.532 207.318 289.018 384 368 a
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-186.702 0 0 -186.702 250.376 308.753 432 352 a
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-231.247 0 0 -231.247 221.298 253.233 400 400 a
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-320 496 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-400 480 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-448 448 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-352 432 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-320 416 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-336 384 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-320 368 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-384 368 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-400 400 l
-</path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-432 352 l
-</path>
+<use layer="t_points" name="mark/disk(sx)" pos="272 480.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 496.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 464.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="416 448.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="400 432.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="432 416.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 384.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="272 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="352 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="336 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="368 336.046" size="normal" stroke="black"/>
+<text transformations="translations" pos="230.771 487.99" stroke="black" type="label" width="7.206" height="6.808" depth="0" valign="baseline" style="math">T</text>
 </page>
 <page>
 <layer name="frame"/>
+<layer name="axis"/>
 <layer name="A"/>
 <layer name="B"/>
 <layer name="t1"/>
 <layer name="A+t1"/>
 <layer name="more_t"/>
 <layer name="even_more_t"/>
-<view layers="frame A B t1 more_t" active="even_more_t"/>
+<layer name="t_vec_centered"/>
+<layer name="t_points"/>
+<view layers="frame A B more_t" active="t_points"/>
 <path layer="frame" stroke="black">
 64 576 m
 64 256 l
@@ -797,174 +797,173 @@ h
 512 576 l
 h
 </path>
-<text transformations="translations" pos="80 272" stroke="black" type="label" valign="baseline" style="math">\mathbb{R}^2</text>
-<path layer="A" stroke="red" pen="heavier">
+<text transformations="translations" pos="80 272" stroke="black" type="label" width="11.665" height="8.11" depth="0" valign="baseline" style="math">\mathbb{R}^2</text>
+<path layer="A" matrix="1 0 0 1 0 -128" stroke="red" pen="heavier">
 128 512 m
 128 448 l
 192 448 l
 192 512 l
 h
 </path>
-<use name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
-<use name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
-<use name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
-<path layer="B" stroke="blue" pen="heavier">
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="B" matrix="1 0 0 1 0 16" stroke="blue" pen="heavier">
 256 528 m
 256 320 l
 480 320 l
 480 528 l
 h
 </path>
-<use name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="400 480" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="400 400" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="352 432" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="320 416" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="336 384" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="432 352" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
-<path layer="t1" stroke="black" arrow="arc/small">
-160 464 m
-250.32 0 0 250.32 336 642 400 400 a
-</path>
-<path layer="A+t1" matrix="1 0 0 1 240 -64" stroke="red" pen="heavier">
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 32" name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
+<path layer="A+t1" matrix="1 0 0 1 147.499 -78.6005" stroke="red" pen="heavier">
 128 512 m
 128 448 l
 192 448 l
 192 512 l
 h
 </path>
-<use matrix="1 0 0 1 240 -64" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
-<use matrix="1 0 0 1 240 -64" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
-<use matrix="1 0 0 1 240 -64" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
-<path layer="more_t" stroke="black" arrow="arc/small">
-160 464 m
-162.338 0 0 162.338 280 573.333 320 416 a
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="axis" stroke="black" arrow="normal/small" rarrow="normal/small">
+128 560 m
+128 272 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-250.482 0 0 250.482 359.599 615.332 320 368 a
+<path stroke="black" arrow="normal/small" rarrow="normal/small">
+80 320 m
+496 320 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-216.89 0 0 216.89 328.343 600.755 336 384 a
+<text matrix="1 0 0 1 5.59813 4.1986" transformations="translations" pos="112 304" stroke="black" type="label" width="4.981" height="6.42" depth="0" valign="baseline" style="math">0</text>
+<path layer="t1" stroke="black" pen="heavier" arrow="normal/normal">
+176 352 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-317.122 0 0 317.122 387.33 685.104 384 368 a
+<path layer="more_t" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-211.418 0 0 211.418 353.826 548.434 432 352 a
+<path stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-263.935 0 0 263.935 296.333 689.997 352 432 a
+<path stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-97.7598 0 0 97.7598 229.437 532.815 320 496 a
+<path stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-237.769 0 0 237.769 266.356 676.656 400 480 a
+<path layer="even_more_t" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-512.288 0 0 512.288 331.267 946.812 448 448 a
+<path stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
 </path>
-<path layer="even_more_t" stroke="black" arrow="arc/small">
-176 480 m
-237.833 0 0 -237.833 113.15 250.621 320 368 a
+<path stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-277.604 0 0 -277.604 121.481 207.802 336 384 a
+<path stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-183.496 0 0 -183.496 180.695 296.564 320 416 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-114.128 0 0 -114.128 257.739 400.352 320 496 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-169.505 0 0 -169.505 288 352.768 400 480 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-270.719 0 0 -270.719 284.714 232.069 448 448 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-121.769 0 0 -121.769 242.774 378.172 352 432 a
+<path layer="t_vec_centered" matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-193.532 0 0 -193.532 207.318 289.018 384 368 a
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-186.702 0 0 -186.702 250.376 308.753 432 352 a
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-231.247 0 0 -231.247 221.298 253.233 400 400 a
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-320 496 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-400 480 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-448 448 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-352 432 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-320 416 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-336 384 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-320 368 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-384 368 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-400 400 l
-</path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-432 352 l
-</path>
+<use layer="t_points" name="mark/disk(sx)" pos="272 480.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 496.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 464.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="416 448.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="400 432.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="432 416.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 384.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="272 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="352 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="336 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="368 336.046" size="normal" stroke="black"/>
+<text transformations="translations" pos="230.771 487.99" stroke="black" type="label" width="7.206" height="6.808" depth="0" valign="baseline" style="math">T</text>
 </page>
 <page>
 <layer name="frame"/>
+<layer name="axis"/>
 <layer name="A"/>
 <layer name="B"/>
 <layer name="t1"/>
 <layer name="A+t1"/>
 <layer name="more_t"/>
 <layer name="even_more_t"/>
-<view layers="frame A B t1 more_t even_more_t" active="even_more_t"/>
+<layer name="t_vec_centered"/>
+<layer name="t_points"/>
+<view layers="frame A B more_t even_more_t" active="t_points"/>
 <path layer="frame" stroke="black">
 64 576 m
 64 256 l
@@ -972,163 +971,2039 @@ h
 512 576 l
 h
 </path>
-<text transformations="translations" pos="80 272" stroke="black" type="label" valign="baseline" style="math">\mathbb{R}^2</text>
-<path layer="A" stroke="red" pen="heavier">
+<text transformations="translations" pos="80 272" stroke="black" type="label" width="11.665" height="8.11" depth="0" valign="baseline" style="math">\mathbb{R}^2</text>
+<path layer="A" matrix="1 0 0 1 0 -128" stroke="red" pen="heavier">
 128 512 m
 128 448 l
 192 448 l
 192 512 l
 h
 </path>
-<use name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
-<use name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
-<use name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
-<path layer="B" stroke="blue" pen="heavier">
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="B" matrix="1 0 0 1 0 16" stroke="blue" pen="heavier">
 256 528 m
 256 320 l
 480 320 l
 480 528 l
 h
 </path>
-<use name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="400 480" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="400 400" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="352 432" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="320 416" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="336 384" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="432 352" size="normal" stroke="blue"/>
-<use name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
-<path layer="t1" stroke="black" arrow="arc/small">
-160 464 m
-250.32 0 0 250.32 336 642 400 400 a
-</path>
-<path layer="A+t1" matrix="1 0 0 1 240 -64" stroke="red" pen="heavier">
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 32" name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
+<path layer="A+t1" matrix="1 0 0 1 147.499 -78.6005" stroke="red" pen="heavier">
 128 512 m
 128 448 l
 192 448 l
 192 512 l
 h
 </path>
-<use matrix="1 0 0 1 240 -64" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
-<use matrix="1 0 0 1 240 -64" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
-<use matrix="1 0 0 1 240 -64" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
-<path layer="more_t" stroke="black" arrow="arc/small">
-160 464 m
-162.338 0 0 162.338 280 573.333 320 416 a
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="axis" stroke="black" arrow="normal/small" rarrow="normal/small">
+128 560 m
+128 272 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-250.482 0 0 250.482 359.599 615.332 320 368 a
+<path stroke="black" arrow="normal/small" rarrow="normal/small">
+80 320 m
+496 320 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-216.89 0 0 216.89 328.343 600.755 336 384 a
+<text matrix="1 0 0 1 5.59813 4.1986" transformations="translations" pos="112 304" stroke="black" type="label" width="4.981" height="6.42" depth="0" valign="baseline" style="math">0</text>
+<path layer="t1" stroke="black" pen="heavier" arrow="normal/normal">
+176 352 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-317.122 0 0 317.122 387.33 685.104 384 368 a
+<path layer="more_t" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-211.418 0 0 211.418 353.826 548.434 432 352 a
+<path stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-263.935 0 0 263.935 296.333 689.997 352 432 a
+<path stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-97.7598 0 0 97.7598 229.437 532.815 320 496 a
+<path stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-237.769 0 0 237.769 266.356 676.656 400 480 a
+<path layer="even_more_t" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-160 464 m
-512.288 0 0 512.288 331.267 946.812 448 448 a
+<path stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
 </path>
-<path layer="even_more_t" stroke="black" arrow="arc/small">
-176 480 m
-237.833 0 0 -237.833 113.15 250.621 320 368 a
+<path stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-277.604 0 0 -277.604 121.481 207.802 336 384 a
+<path stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-183.496 0 0 -183.496 180.695 296.564 320 416 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-114.128 0 0 -114.128 257.739 400.352 320 496 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-169.505 0 0 -169.505 288 352.768 400 480 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-270.719 0 0 -270.719 284.714 232.069 448 448 a
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-121.769 0 0 -121.769 242.774 378.172 352 432 a
+<path layer="t_vec_centered" matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-193.532 0 0 -193.532 207.318 289.018 384 368 a
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-186.702 0 0 -186.702 250.376 308.753 432 352 a
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-176 480 m
-231.247 0 0 -231.247 221.298 253.233 400 400 a
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-320 496 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-400 480 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-448 448 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-352 432 l
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-320 416 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-336 384 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-320 368 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-384 368 l
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-400 400 l
+<use layer="t_points" name="mark/disk(sx)" pos="272 480.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 496.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 464.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="416 448.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="400 432.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="432 416.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 384.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="272 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="352 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="336 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="368 336.046" size="normal" stroke="black"/>
+<text transformations="translations" pos="230.771 487.99" stroke="black" type="label" width="7.206" height="6.808" depth="0" valign="baseline" style="math">T</text>
+</page>
+<page>
+<layer name="frame"/>
+<layer name="axis"/>
+<layer name="A"/>
+<layer name="B"/>
+<layer name="t1"/>
+<layer name="A+t1"/>
+<layer name="more_t"/>
+<layer name="even_more_t"/>
+<layer name="t_vec_centered"/>
+<layer name="t_points"/>
+<view layers="frame axis A B more_t even_more_t" active="t_points"/>
+<path layer="frame" stroke="black">
+64 576 m
+64 256 l
+512 256 l
+512 576 l
+h
 </path>
-<path stroke="black" arrow="arc/small">
-144 496 m
-432 352 l
+<text transformations="translations" pos="80 272" stroke="black" type="label" width="11.665" height="8.11" depth="0" valign="baseline" style="math">\mathbb{R}^2</text>
+<path layer="A" matrix="1 0 0 1 0 -128" stroke="red" pen="heavier">
+128 512 m
+128 448 l
+192 448 l
+192 512 l
+h
 </path>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="B" matrix="1 0 0 1 0 16" stroke="blue" pen="heavier">
+256 528 m
+256 320 l
+480 320 l
+480 528 l
+h
+</path>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 32" name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
+<path layer="A+t1" matrix="1 0 0 1 147.499 -78.6005" stroke="red" pen="heavier">
+128 512 m
+128 448 l
+192 448 l
+192 512 l
+h
+</path>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="axis" stroke="black" arrow="normal/small" rarrow="normal/small">
+128 560 m
+128 272 l
+</path>
+<path stroke="black" arrow="normal/small" rarrow="normal/small">
+80 320 m
+496 320 l
+</path>
+<text matrix="1 0 0 1 5.59813 4.1986" transformations="translations" pos="112 304" stroke="black" type="label" width="4.981" height="6.42" depth="0" valign="baseline" style="math">0</text>
+<path layer="t1" stroke="black" pen="heavier" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path layer="more_t" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
+</path>
+<path layer="even_more_t" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
+</path>
+<path layer="t_vec_centered" matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
+</path>
+<use layer="t_points" name="mark/disk(sx)" pos="272 480.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 496.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 464.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="416 448.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="400 432.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="432 416.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 384.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="272 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="352 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="336 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="368 336.046" size="normal" stroke="black"/>
+<text transformations="translations" pos="230.771 487.99" stroke="black" type="label" width="7.206" height="6.808" depth="0" valign="baseline" style="math">T</text>
+</page>
+<page>
+<layer name="frame"/>
+<layer name="axis"/>
+<layer name="A"/>
+<layer name="B"/>
+<layer name="t1"/>
+<layer name="A+t1"/>
+<layer name="more_t"/>
+<layer name="even_more_t"/>
+<layer name="t_vec_centered"/>
+<layer name="t_points"/>
+<view layers="frame axis A B t_vec_centered" active="t_points"/>
+<path layer="frame" stroke="black">
+64 576 m
+64 256 l
+512 256 l
+512 576 l
+h
+</path>
+<text transformations="translations" pos="80 272" stroke="black" type="label" width="11.665" height="8.11" depth="0" valign="baseline" style="math">\mathbb{R}^2</text>
+<path layer="A" matrix="1 0 0 1 0 -128" stroke="red" pen="heavier">
+128 512 m
+128 448 l
+192 448 l
+192 512 l
+h
+</path>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="B" matrix="1 0 0 1 0 16" stroke="blue" pen="heavier">
+256 528 m
+256 320 l
+480 320 l
+480 528 l
+h
+</path>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 32" name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
+<path layer="A+t1" matrix="1 0 0 1 147.499 -78.6005" stroke="red" pen="heavier">
+128 512 m
+128 448 l
+192 448 l
+192 512 l
+h
+</path>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="axis" stroke="black" arrow="normal/small" rarrow="normal/small">
+128 560 m
+128 272 l
+</path>
+<path stroke="black" arrow="normal/small" rarrow="normal/small">
+80 320 m
+496 320 l
+</path>
+<text matrix="1 0 0 1 5.59813 4.1986" transformations="translations" pos="112 304" stroke="black" type="label" width="4.981" height="6.42" depth="0" valign="baseline" style="math">0</text>
+<path layer="t1" stroke="black" pen="heavier" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path layer="more_t" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
+</path>
+<path layer="even_more_t" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
+</path>
+<path layer="t_vec_centered" matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
+</path>
+<use layer="t_points" name="mark/disk(sx)" pos="272 480.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 496.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 464.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="416 448.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="400 432.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="432 416.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 384.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="272 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="352 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="336 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="368 336.046" size="normal" stroke="black"/>
+<text transformations="translations" pos="230.771 487.99" stroke="black" type="label" width="7.206" height="6.808" depth="0" valign="baseline" style="math">T</text>
+</page>
+<page>
+<layer name="frame"/>
+<layer name="axis"/>
+<layer name="A"/>
+<layer name="B"/>
+<layer name="t1"/>
+<layer name="A+t1"/>
+<layer name="more_t"/>
+<layer name="even_more_t"/>
+<layer name="t_vec_centered"/>
+<layer name="t_points"/>
+<view layers="frame axis A B t_vec_centered t_points" active="t_points"/>
+<path layer="frame" stroke="black">
+64 576 m
+64 256 l
+512 256 l
+512 576 l
+h
+</path>
+<text transformations="translations" pos="80 272" stroke="black" type="label" width="11.665" height="8.11" depth="0" valign="baseline" style="math">\mathbb{R}^2</text>
+<path layer="A" matrix="1 0 0 1 0 -128" stroke="red" pen="heavier">
+128 512 m
+128 448 l
+192 448 l
+192 512 l
+h
+</path>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="B" matrix="1 0 0 1 0 16" stroke="blue" pen="heavier">
+256 528 m
+256 320 l
+480 320 l
+480 528 l
+h
+</path>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 32" name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
+<path layer="A+t1" matrix="1 0 0 1 147.499 -78.6005" stroke="red" pen="heavier">
+128 512 m
+128 448 l
+192 448 l
+192 512 l
+h
+</path>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="axis" stroke="black" arrow="normal/small" rarrow="normal/small">
+128 560 m
+128 272 l
+</path>
+<path stroke="black" arrow="normal/small" rarrow="normal/small">
+80 320 m
+496 320 l
+</path>
+<text matrix="1 0 0 1 5.59813 4.1986" transformations="translations" pos="112 304" stroke="black" type="label" width="4.981" height="6.42" depth="0" valign="baseline" style="math">0</text>
+<path layer="t1" stroke="black" pen="heavier" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path layer="more_t" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
+</path>
+<path layer="even_more_t" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
+</path>
+<path layer="t_vec_centered" matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
+</path>
+<use layer="t_points" name="mark/disk(sx)" pos="272 480.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 496.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 464.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="416 448.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="400 432.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="432 416.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 384.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="272 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="352 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="336 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="368 336.046" size="normal" stroke="black"/>
+<text transformations="translations" pos="230.771 487.99" stroke="black" type="label" width="7.206" height="6.808" depth="0" valign="baseline" style="math">T</text>
+</page>
+<page>
+<layer name="frame"/>
+<layer name="axis"/>
+<layer name="A"/>
+<layer name="B"/>
+<layer name="t1"/>
+<layer name="A+t1"/>
+<layer name="more_t"/>
+<layer name="even_more_t"/>
+<layer name="t_vec_centered"/>
+<layer name="t_points"/>
+<view layers="frame axis t_points" active="t_points"/>
+<path layer="frame" stroke="black">
+64 576 m
+64 256 l
+512 256 l
+512 576 l
+h
+</path>
+<text transformations="translations" pos="80 272" stroke="black" type="label" width="11.665" height="8.11" depth="0" valign="baseline" style="math">\mathbb{R}^2</text>
+<path layer="A" matrix="1 0 0 1 0 -128" stroke="red" pen="heavier">
+128 512 m
+128 448 l
+192 448 l
+192 512 l
+h
+</path>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="B" matrix="1 0 0 1 0 16" stroke="blue" pen="heavier">
+256 528 m
+256 320 l
+480 320 l
+480 528 l
+h
+</path>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 32" name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
+<path layer="A+t1" matrix="1 0 0 1 147.499 -78.6005" stroke="red" pen="heavier">
+128 512 m
+128 448 l
+192 448 l
+192 512 l
+h
+</path>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="axis" stroke="black" arrow="normal/small" rarrow="normal/small">
+128 560 m
+128 272 l
+</path>
+<path stroke="black" arrow="normal/small" rarrow="normal/small">
+80 320 m
+496 320 l
+</path>
+<text matrix="1 0 0 1 5.59813 4.1986" transformations="translations" pos="112 304" stroke="black" type="label" width="4.981" height="6.42" depth="0" valign="baseline" style="math">0</text>
+<path layer="t1" stroke="black" pen="heavier" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path layer="more_t" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
+</path>
+<path layer="even_more_t" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
+</path>
+<path layer="t_vec_centered" matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
+</path>
+<use layer="t_points" name="mark/disk(sx)" pos="272 480.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 496.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 464.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="416 448.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="400 432.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="432 416.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 384.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="272 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="352 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="336 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="368 336.046" size="normal" stroke="black"/>
+<text transformations="translations" pos="230.771 487.99" stroke="black" type="label" width="7.206" height="6.808" depth="0" valign="baseline" style="math">T</text>
+</page>
+<page>
+<layer name="frame"/>
+<layer name="axis"/>
+<layer name="A"/>
+<layer name="B"/>
+<layer name="t1"/>
+<layer name="A+t1"/>
+<layer name="more_t"/>
+<layer name="even_more_t"/>
+<layer name="t_vec_centered"/>
+<layer name="t_points"/>
+<layer name="vorT"/>
+<layer name="vorcell_highlight"/>
+<layer name="M_t_ba"/>
+<layer name="M_tilde"/>
+<view layers="frame axis t_points vorT" active="vorcell_highlight"/>
+<path layer="frame" stroke="black">
+64 576 m
+64 256 l
+512 256 l
+512 576 l
+h
+</path>
+<text transformations="translations" pos="80 272" stroke="black" type="label" width="11.665" height="8.11" depth="0" valign="baseline" style="math">\mathbb{R}^2</text>
+<path layer="A" matrix="1 0 0 1 0 -128" stroke="red" pen="heavier">
+128 512 m
+128 448 l
+192 448 l
+192 512 l
+h
+</path>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="B" matrix="1 0 0 1 0 16" stroke="blue" pen="heavier">
+256 528 m
+256 320 l
+480 320 l
+480 528 l
+h
+</path>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 32" name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
+<path layer="A+t1" matrix="1 0 0 1 147.499 -78.6005" stroke="red" pen="heavier">
+128 512 m
+128 448 l
+192 448 l
+192 512 l
+h
+</path>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="axis" stroke="black" arrow="normal/small" rarrow="normal/small">
+128 560 m
+128 272 l
+</path>
+<path stroke="black" arrow="normal/small" rarrow="normal/small">
+80 320 m
+496 320 l
+</path>
+<text matrix="1 0 0 1 5.59813 4.1986" transformations="translations" pos="112 304" stroke="black" type="label" width="4.981" height="6.42" depth="0" valign="baseline" style="math">0</text>
+<path layer="t1" stroke="black" pen="heavier" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path layer="more_t" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
+</path>
+<path layer="even_more_t" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
+</path>
+<path layer="t_vec_centered" matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
+</path>
+<text layer="t_points" transformations="translations" pos="230.771 487.99" stroke="black" type="label" width="7.206" height="6.808" depth="0" valign="baseline" style="math">T</text>
+<group>
+<use name="mark/disk(sx)" pos="272 480.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 496.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 464.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="416 448.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="400 432.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="432 416.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 384.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="272 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="352 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="336 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="368 336.046" size="normal" stroke="black"/>
+</group>
+<path layer="vorT" stroke="black" pen="heavier">
+232 424.046 m
+132 424.046 l
+</path>
+<path stroke="black" pen="heavier">
+232 424.046 m
+266.909 429.864 l
+</path>
+<path stroke="black" pen="heavier">
+232 424.046 m
+290.667 365.379 l
+</path>
+<path stroke="black" pen="heavier">
+266.909 429.864 m
+290.667 477.379 l
+</path>
+<path stroke="black" pen="heavier">
+266.909 429.864 m
+330.286 417.189 l
+</path>
+<path matrix="1.36024 0 0 1.36024 -104.71 -171.971" stroke="black" pen="heavier">
+290.667 477.379 m
+219.956 548.09 l
+</path>
+<path stroke="black" pen="heavier">
+290.667 477.379 m
+368.615 516.354 l
+</path>
+<path stroke="black" pen="heavier">
+368.615 516.354 m
+364 484.046 l
+</path>
+<path matrix="0.58809 0 0 0.58809 151.836 212.691" stroke="black" pen="heavier">
+368.615 516.354 m
+403.728 609.987 l
+</path>
+<path stroke="black" pen="heavier">
+290.667 365.379 m
+245.945 275.937 l
+</path>
+<path stroke="black" pen="heavier">
+290.667 365.379 m
+320 380.046 l
+</path>
+<path stroke="black" pen="heavier">
+418.667 429.379 m
+508.109 474.101 l
+</path>
+<path stroke="black" pen="heavier">
+418.667 429.379 m
+396.364 384.773 l
+</path>
+<path stroke="black" pen="heavier">
+418.667 429.379 m
+364 484.046 l
+</path>
+<path stroke="black" pen="heavier">
+364 484.046 m
+344 424.046 l
+</path>
+<path matrix="1.36131 0 0 1.36131 -145.634 -134.978" stroke="black" pen="heavier">
+403.077 373.584 m
+481.164 311.115 l
+</path>
+<path stroke="black" pen="heavier">
+403.077 373.584 m
+396.364 384.773 l
+</path>
+<path stroke="black" pen="heavier">
+403.077 373.584 m
+354.667 349.379 l
+</path>
+<path stroke="black" pen="heavier">
+396.364 384.773 m
+344 424.046 l
+</path>
+<path stroke="black" pen="heavier">
+330.286 417.189 m
+344 424.046 l
+</path>
+<path stroke="black" pen="heavier">
+330.286 417.189 m
+321.6 382.446 l
+</path>
+<path stroke="black" pen="heavier">
+320 380.046 m
+321.6 382.446 l
+</path>
+<path stroke="black" pen="heavier">
+320 380.046 m
+320 280.046 l
+</path>
+<path stroke="black" pen="heavier">
+321.6 382.446 m
+354.667 349.379 l
+</path>
+<path matrix="0.17375 0 0 0.17375 264.4 231.388" stroke="black" pen="heavier">
+320 280.046 m
+295.746 183.032 l
+</path>
+<path stroke="black" pen="heavier">
+320 280.046 m
+354.667 349.379 l
+</path>
+<text layer="M_t_ba" matrix="1 0 0 1 -10.0067 -2.72909" transformations="translations" pos="332.012 460.919" stroke="black" type="label" width="20.683" height="6.809" depth="2.55" valign="baseline" style="math">M_{t_{ba}}</text>
+<text layer="M_tilde" matrix="1 0 0 1 319.303 23.6521" transformations="translations" pos="165.537 368.13" stroke="black" type="label" width="16.91" height="17.11" depth="0" valign="baseline" size="LARGE" style="math">\widetilde{\EuScript{M}}</text>
+<path layer="vorcell_highlight" stroke="red" fill="red" opacity="30%">
+266.909 429.864 m
+290.667 477.379 l
+368.615 516.354 l
+364 484.046 l
+344 424.046 l
+330.286 417.189 l
+266.909 429.864 l
+</path>
+<text matrix="1 0 0 1 -10.0067 0.909696" transformations="translations" pos="302.901 449.093" stroke="black" type="label" width="11.921" height="6.132" depth="1.49" valign="baseline" style="math">t_{ba}</text>
+</page>
+<page>
+<layer name="frame"/>
+<layer name="axis"/>
+<layer name="A"/>
+<layer name="B"/>
+<layer name="t1"/>
+<layer name="A+t1"/>
+<layer name="more_t"/>
+<layer name="even_more_t"/>
+<layer name="t_vec_centered"/>
+<layer name="t_points"/>
+<layer name="vorT"/>
+<layer name="vorcell_highlight"/>
+<layer name="M_t_ba"/>
+<layer name="M_tilde"/>
+<view layers="frame axis t_points vorT vorcell_highlight" active="vorcell_highlight"/>
+<path layer="frame" stroke="black">
+64 576 m
+64 256 l
+512 256 l
+512 576 l
+h
+</path>
+<text transformations="translations" pos="80 272" stroke="black" type="label" width="11.665" height="8.11" depth="0" valign="baseline" style="math">\mathbb{R}^2</text>
+<path layer="A" matrix="1 0 0 1 0 -128" stroke="red" pen="heavier">
+128 512 m
+128 448 l
+192 448 l
+192 512 l
+h
+</path>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="B" matrix="1 0 0 1 0 16" stroke="blue" pen="heavier">
+256 528 m
+256 320 l
+480 320 l
+480 528 l
+h
+</path>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 32" name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
+<path layer="A+t1" matrix="1 0 0 1 147.499 -78.6005" stroke="red" pen="heavier">
+128 512 m
+128 448 l
+192 448 l
+192 512 l
+h
+</path>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="axis" stroke="black" arrow="normal/small" rarrow="normal/small">
+128 560 m
+128 272 l
+</path>
+<path stroke="black" arrow="normal/small" rarrow="normal/small">
+80 320 m
+496 320 l
+</path>
+<text matrix="1 0 0 1 5.59813 4.1986" transformations="translations" pos="112 304" stroke="black" type="label" width="4.981" height="6.42" depth="0" valign="baseline" style="math">0</text>
+<path layer="t1" stroke="black" pen="heavier" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path layer="more_t" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
+</path>
+<path layer="even_more_t" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
+</path>
+<path layer="t_vec_centered" matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
+</path>
+<text layer="t_points" transformations="translations" pos="230.771 487.99" stroke="black" type="label" width="7.206" height="6.808" depth="0" valign="baseline" style="math">T</text>
+<group>
+<use name="mark/disk(sx)" pos="272 480.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 496.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 464.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="416 448.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="400 432.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="432 416.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 384.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="272 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="352 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="336 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="368 336.046" size="normal" stroke="black"/>
+</group>
+<path layer="vorT" stroke="black" pen="heavier">
+232 424.046 m
+132 424.046 l
+</path>
+<path stroke="black" pen="heavier">
+232 424.046 m
+266.909 429.864 l
+</path>
+<path stroke="black" pen="heavier">
+232 424.046 m
+290.667 365.379 l
+</path>
+<path stroke="black" pen="heavier">
+266.909 429.864 m
+290.667 477.379 l
+</path>
+<path stroke="black" pen="heavier">
+266.909 429.864 m
+330.286 417.189 l
+</path>
+<path matrix="1.36024 0 0 1.36024 -104.71 -171.971" stroke="black" pen="heavier">
+290.667 477.379 m
+219.956 548.09 l
+</path>
+<path stroke="black" pen="heavier">
+290.667 477.379 m
+368.615 516.354 l
+</path>
+<path stroke="black" pen="heavier">
+368.615 516.354 m
+364 484.046 l
+</path>
+<path matrix="0.58809 0 0 0.58809 151.836 212.691" stroke="black" pen="heavier">
+368.615 516.354 m
+403.728 609.987 l
+</path>
+<path stroke="black" pen="heavier">
+290.667 365.379 m
+245.945 275.937 l
+</path>
+<path stroke="black" pen="heavier">
+290.667 365.379 m
+320 380.046 l
+</path>
+<path stroke="black" pen="heavier">
+418.667 429.379 m
+508.109 474.101 l
+</path>
+<path stroke="black" pen="heavier">
+418.667 429.379 m
+396.364 384.773 l
+</path>
+<path stroke="black" pen="heavier">
+418.667 429.379 m
+364 484.046 l
+</path>
+<path stroke="black" pen="heavier">
+364 484.046 m
+344 424.046 l
+</path>
+<path matrix="1.36131 0 0 1.36131 -145.634 -134.978" stroke="black" pen="heavier">
+403.077 373.584 m
+481.164 311.115 l
+</path>
+<path stroke="black" pen="heavier">
+403.077 373.584 m
+396.364 384.773 l
+</path>
+<path stroke="black" pen="heavier">
+403.077 373.584 m
+354.667 349.379 l
+</path>
+<path stroke="black" pen="heavier">
+396.364 384.773 m
+344 424.046 l
+</path>
+<path stroke="black" pen="heavier">
+330.286 417.189 m
+344 424.046 l
+</path>
+<path stroke="black" pen="heavier">
+330.286 417.189 m
+321.6 382.446 l
+</path>
+<path stroke="black" pen="heavier">
+320 380.046 m
+321.6 382.446 l
+</path>
+<path stroke="black" pen="heavier">
+320 380.046 m
+320 280.046 l
+</path>
+<path stroke="black" pen="heavier">
+321.6 382.446 m
+354.667 349.379 l
+</path>
+<path matrix="0.17375 0 0 0.17375 264.4 231.388" stroke="black" pen="heavier">
+320 280.046 m
+295.746 183.032 l
+</path>
+<path stroke="black" pen="heavier">
+320 280.046 m
+354.667 349.379 l
+</path>
+<text layer="M_t_ba" matrix="1 0 0 1 -10.0067 -2.72909" transformations="translations" pos="332.012 460.919" stroke="black" type="label" width="20.683" height="6.809" depth="2.55" valign="baseline" style="math">M_{t_{ba}}</text>
+<text layer="M_tilde" matrix="1 0 0 1 319.303 23.6521" transformations="translations" pos="165.537 368.13" stroke="black" type="label" width="16.91" height="17.11" depth="0" valign="baseline" size="LARGE" style="math">\widetilde{\EuScript{M}}</text>
+<path layer="vorcell_highlight" stroke="red" fill="red" opacity="30%">
+266.909 429.864 m
+290.667 477.379 l
+368.615 516.354 l
+364 484.046 l
+344 424.046 l
+330.286 417.189 l
+266.909 429.864 l
+</path>
+<text matrix="1 0 0 1 -10.0067 0.909696" transformations="translations" pos="302.901 449.093" stroke="black" type="label" width="11.921" height="6.132" depth="1.49" valign="baseline" style="math">t_{ba}</text>
+</page>
+<page>
+<layer name="frame"/>
+<layer name="axis"/>
+<layer name="A"/>
+<layer name="B"/>
+<layer name="t1"/>
+<layer name="A+t1"/>
+<layer name="more_t"/>
+<layer name="even_more_t"/>
+<layer name="t_vec_centered"/>
+<layer name="t_points"/>
+<layer name="vorT"/>
+<layer name="vorcell_highlight"/>
+<layer name="M_t_ba"/>
+<layer name="M_tilde"/>
+<view layers="frame axis t_points vorT vorcell_highlight M_t_ba" active="vorcell_highlight"/>
+<path layer="frame" stroke="black">
+64 576 m
+64 256 l
+512 256 l
+512 576 l
+h
+</path>
+<text transformations="translations" pos="80 272" stroke="black" type="label" width="11.665" height="8.11" depth="0" valign="baseline" style="math">\mathbb{R}^2</text>
+<path layer="A" matrix="1 0 0 1 0 -128" stroke="red" pen="heavier">
+128 512 m
+128 448 l
+192 448 l
+192 512 l
+h
+</path>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="B" matrix="1 0 0 1 0 16" stroke="blue" pen="heavier">
+256 528 m
+256 320 l
+480 320 l
+480 528 l
+h
+</path>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 32" name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
+<path layer="A+t1" matrix="1 0 0 1 147.499 -78.6005" stroke="red" pen="heavier">
+128 512 m
+128 448 l
+192 448 l
+192 512 l
+h
+</path>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="axis" stroke="black" arrow="normal/small" rarrow="normal/small">
+128 560 m
+128 272 l
+</path>
+<path stroke="black" arrow="normal/small" rarrow="normal/small">
+80 320 m
+496 320 l
+</path>
+<text matrix="1 0 0 1 5.59813 4.1986" transformations="translations" pos="112 304" stroke="black" type="label" width="4.981" height="6.42" depth="0" valign="baseline" style="math">0</text>
+<path layer="t1" stroke="black" pen="heavier" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path layer="more_t" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
+</path>
+<path layer="even_more_t" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
+</path>
+<path layer="t_vec_centered" matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
+</path>
+<text layer="t_points" transformations="translations" pos="230.771 487.99" stroke="black" type="label" width="7.206" height="6.808" depth="0" valign="baseline" style="math">T</text>
+<group>
+<use name="mark/disk(sx)" pos="272 480.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 496.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 464.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="416 448.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="400 432.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="432 416.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 384.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="272 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="352 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="336 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="368 336.046" size="normal" stroke="black"/>
+</group>
+<path layer="vorT" stroke="black" pen="heavier">
+232 424.046 m
+132 424.046 l
+</path>
+<path stroke="black" pen="heavier">
+232 424.046 m
+266.909 429.864 l
+</path>
+<path stroke="black" pen="heavier">
+232 424.046 m
+290.667 365.379 l
+</path>
+<path stroke="black" pen="heavier">
+266.909 429.864 m
+290.667 477.379 l
+</path>
+<path stroke="black" pen="heavier">
+266.909 429.864 m
+330.286 417.189 l
+</path>
+<path matrix="1.36024 0 0 1.36024 -104.71 -171.971" stroke="black" pen="heavier">
+290.667 477.379 m
+219.956 548.09 l
+</path>
+<path stroke="black" pen="heavier">
+290.667 477.379 m
+368.615 516.354 l
+</path>
+<path stroke="black" pen="heavier">
+368.615 516.354 m
+364 484.046 l
+</path>
+<path matrix="0.58809 0 0 0.58809 151.836 212.691" stroke="black" pen="heavier">
+368.615 516.354 m
+403.728 609.987 l
+</path>
+<path stroke="black" pen="heavier">
+290.667 365.379 m
+245.945 275.937 l
+</path>
+<path stroke="black" pen="heavier">
+290.667 365.379 m
+320 380.046 l
+</path>
+<path stroke="black" pen="heavier">
+418.667 429.379 m
+508.109 474.101 l
+</path>
+<path stroke="black" pen="heavier">
+418.667 429.379 m
+396.364 384.773 l
+</path>
+<path stroke="black" pen="heavier">
+418.667 429.379 m
+364 484.046 l
+</path>
+<path stroke="black" pen="heavier">
+364 484.046 m
+344 424.046 l
+</path>
+<path matrix="1.36131 0 0 1.36131 -145.634 -134.978" stroke="black" pen="heavier">
+403.077 373.584 m
+481.164 311.115 l
+</path>
+<path stroke="black" pen="heavier">
+403.077 373.584 m
+396.364 384.773 l
+</path>
+<path stroke="black" pen="heavier">
+403.077 373.584 m
+354.667 349.379 l
+</path>
+<path stroke="black" pen="heavier">
+396.364 384.773 m
+344 424.046 l
+</path>
+<path stroke="black" pen="heavier">
+330.286 417.189 m
+344 424.046 l
+</path>
+<path stroke="black" pen="heavier">
+330.286 417.189 m
+321.6 382.446 l
+</path>
+<path stroke="black" pen="heavier">
+320 380.046 m
+321.6 382.446 l
+</path>
+<path stroke="black" pen="heavier">
+320 380.046 m
+320 280.046 l
+</path>
+<path stroke="black" pen="heavier">
+321.6 382.446 m
+354.667 349.379 l
+</path>
+<path matrix="0.17375 0 0 0.17375 264.4 231.388" stroke="black" pen="heavier">
+320 280.046 m
+295.746 183.032 l
+</path>
+<path stroke="black" pen="heavier">
+320 280.046 m
+354.667 349.379 l
+</path>
+<text layer="M_t_ba" matrix="1 0 0 1 -10.0067 -2.72909" transformations="translations" pos="332.012 460.919" stroke="black" type="label" width="20.683" height="6.809" depth="2.55" valign="baseline" style="math">M_{t_{ba}}</text>
+<text layer="M_tilde" matrix="1 0 0 1 319.303 23.6521" transformations="translations" pos="165.537 368.13" stroke="black" type="label" width="16.91" height="17.11" depth="0" valign="baseline" size="LARGE" style="math">\widetilde{\EuScript{M}}</text>
+<path layer="vorcell_highlight" stroke="red" fill="red" opacity="30%">
+266.909 429.864 m
+290.667 477.379 l
+368.615 516.354 l
+364 484.046 l
+344 424.046 l
+330.286 417.189 l
+266.909 429.864 l
+</path>
+<text matrix="1 0 0 1 -10.0067 0.909696" transformations="translations" pos="302.901 449.093" stroke="black" type="label" width="11.921" height="6.132" depth="1.49" valign="baseline" style="math">t_{ba}</text>
+</page>
+<page>
+<layer name="frame"/>
+<layer name="axis"/>
+<layer name="A"/>
+<layer name="B"/>
+<layer name="t1"/>
+<layer name="A+t1"/>
+<layer name="more_t"/>
+<layer name="even_more_t"/>
+<layer name="t_vec_centered"/>
+<layer name="t_points"/>
+<layer name="vorT"/>
+<layer name="vorcell_highlight"/>
+<layer name="M_t_ba"/>
+<layer name="M_tilde"/>
+<view layers="frame axis t_points vorT vorcell_highlight M_t_ba M_tilde" active="vorcell_highlight"/>
+<path layer="frame" stroke="black">
+64 576 m
+64 256 l
+512 256 l
+512 576 l
+h
+</path>
+<text transformations="translations" pos="80 272" stroke="black" type="label" width="11.665" height="8.11" depth="0" valign="baseline" style="math">\mathbb{R}^2</text>
+<path layer="A" matrix="1 0 0 1 0 -128" stroke="red" pen="heavier">
+128 512 m
+128 448 l
+192 448 l
+192 512 l
+h
+</path>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 0 -128" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="B" matrix="1 0 0 1 0 16" stroke="blue" pen="heavier">
+256 528 m
+256 320 l
+480 320 l
+480 528 l
+h
+</path>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="320 496" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="384 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 32" name="mark/disk(sx)" pos="320 368" size="normal" stroke="blue"/>
+<use matrix="1 0 0 1 0 16" name="mark/disk(sx)" pos="448 448" size="normal" stroke="blue"/>
+<path layer="A+t1" matrix="1 0 0 1 147.499 -78.6005" stroke="red" pen="heavier">
+128 512 m
+128 448 l
+192 448 l
+192 512 l
+h
+</path>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="144 496" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="176 480" size="normal" stroke="red"/>
+<use matrix="1 0 0 1 146.274 -78.775" name="mark/disk(sx)" pos="160 464" size="normal" stroke="red"/>
+<path layer="axis" stroke="black" arrow="normal/small" rarrow="normal/small">
+128 560 m
+128 272 l
+</path>
+<path stroke="black" arrow="normal/small" rarrow="normal/small">
+80 320 m
+496 320 l
+</path>
+<text matrix="1 0 0 1 5.59813 4.1986" transformations="translations" pos="112 304" stroke="black" type="label" width="4.981" height="6.42" depth="0" valign="baseline" style="math">0</text>
+<path layer="t1" stroke="black" pen="heavier" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path layer="more_t" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
+</path>
+<path stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
+</path>
+<path layer="even_more_t" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
+</path>
+<path stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
+</path>
+<path layer="t_vec_centered" matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -16 -47.9537" stroke="black" arrow="normal/normal">
+144 368 m
+448 464 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+448 464 l
+</path>
+<path matrix="1 0 0 1 -32 -15.9537" stroke="black" arrow="normal/normal">
+160 336 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 400 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+384 384 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+320 512 l
+</path>
+<path matrix="1 0 0 1 -48 -31.9537" stroke="black" arrow="normal/normal">
+176 352 m
+448 464 l
+</path>
+<text layer="t_points" transformations="translations" pos="230.771 487.99" stroke="black" type="label" width="7.206" height="6.808" depth="0" valign="baseline" style="math">T</text>
+<group>
+<use name="mark/disk(sx)" pos="272 480.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 496.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 464.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="416 448.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="400 432.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="432 416.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="288 384.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="272 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="352 368.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="304 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="336 352.046" size="normal" stroke="black"/>
+<use name="mark/disk(sx)" pos="368 336.046" size="normal" stroke="black"/>
+</group>
+<path layer="vorT" stroke="black" pen="heavier">
+232 424.046 m
+132 424.046 l
+</path>
+<path stroke="black" pen="heavier">
+232 424.046 m
+266.909 429.864 l
+</path>
+<path stroke="black" pen="heavier">
+232 424.046 m
+290.667 365.379 l
+</path>
+<path stroke="black" pen="heavier">
+266.909 429.864 m
+290.667 477.379 l
+</path>
+<path stroke="black" pen="heavier">
+266.909 429.864 m
+330.286 417.189 l
+</path>
+<path matrix="1.36024 0 0 1.36024 -104.71 -171.971" stroke="black" pen="heavier">
+290.667 477.379 m
+219.956 548.09 l
+</path>
+<path stroke="black" pen="heavier">
+290.667 477.379 m
+368.615 516.354 l
+</path>
+<path stroke="black" pen="heavier">
+368.615 516.354 m
+364 484.046 l
+</path>
+<path matrix="0.58809 0 0 0.58809 151.836 212.691" stroke="black" pen="heavier">
+368.615 516.354 m
+403.728 609.987 l
+</path>
+<path stroke="black" pen="heavier">
+290.667 365.379 m
+245.945 275.937 l
+</path>
+<path stroke="black" pen="heavier">
+290.667 365.379 m
+320 380.046 l
+</path>
+<path stroke="black" pen="heavier">
+418.667 429.379 m
+508.109 474.101 l
+</path>
+<path stroke="black" pen="heavier">
+418.667 429.379 m
+396.364 384.773 l
+</path>
+<path stroke="black" pen="heavier">
+418.667 429.379 m
+364 484.046 l
+</path>
+<path stroke="black" pen="heavier">
+364 484.046 m
+344 424.046 l
+</path>
+<path matrix="1.36131 0 0 1.36131 -145.634 -134.978" stroke="black" pen="heavier">
+403.077 373.584 m
+481.164 311.115 l
+</path>
+<path stroke="black" pen="heavier">
+403.077 373.584 m
+396.364 384.773 l
+</path>
+<path stroke="black" pen="heavier">
+403.077 373.584 m
+354.667 349.379 l
+</path>
+<path stroke="black" pen="heavier">
+396.364 384.773 m
+344 424.046 l
+</path>
+<path stroke="black" pen="heavier">
+330.286 417.189 m
+344 424.046 l
+</path>
+<path stroke="black" pen="heavier">
+330.286 417.189 m
+321.6 382.446 l
+</path>
+<path stroke="black" pen="heavier">
+320 380.046 m
+321.6 382.446 l
+</path>
+<path stroke="black" pen="heavier">
+320 380.046 m
+320 280.046 l
+</path>
+<path stroke="black" pen="heavier">
+321.6 382.446 m
+354.667 349.379 l
+</path>
+<path matrix="0.17375 0 0 0.17375 264.4 231.388" stroke="black" pen="heavier">
+320 280.046 m
+295.746 183.032 l
+</path>
+<path stroke="black" pen="heavier">
+320 280.046 m
+354.667 349.379 l
+</path>
+<text layer="M_t_ba" matrix="1 0 0 1 -10.0067 -2.72909" transformations="translations" pos="332.012 460.919" stroke="black" type="label" width="20.683" height="6.809" depth="2.55" valign="baseline" style="math">M_{t_{ba}}</text>
+<text layer="M_tilde" matrix="1 0 0 1 319.303 23.6521" transformations="translations" pos="165.537 368.13" stroke="black" type="label" width="16.91" height="17.11" depth="0" valign="baseline" size="LARGE" style="math">\widetilde{\EuScript{M}}</text>
+<path layer="vorcell_highlight" stroke="red" fill="red" opacity="30%">
+266.909 429.864 m
+290.667 477.379 l
+368.615 516.354 l
+364 484.046 l
+344 424.046 l
+330.286 417.189 l
+266.909 429.864 l
+</path>
+<text matrix="1 0 0 1 -10.0067 0.909696" transformations="translations" pos="302.901 449.093" stroke="black" type="label" width="11.921" height="6.132" depth="1.49" valign="baseline" style="math">t_{ba}</text>
 </page>
 </ipe>

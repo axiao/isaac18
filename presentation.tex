@@ -109,7 +109,7 @@
 \newcommand{\tildeM}{\widetilde{\EuScript{M}}}
 \newcommand{\X}{\EuScript{X}}
 
-\def\EMPH#1{\textcolor{BrickRed}{{\emph{#1}}}}
+%\def\EMPH#1{\textcolor{BrickRed}{{\emph{#1}}}}
 
 
 
@@ -233,15 +233,14 @@
 \end{figure}
 \end{frame}
 
-%TODO transition 1-D to 2-D
 \begin{frame}{How many distinct matchings? (2-dimensional)}
 % function over t for each k matching
 % cost*(t): the lower envelope
 % vertical projection subdivides the plane
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.6\textwidth,page=8]{lower_env}%
-%TODO 2d
+\includegraphics[height=120pt,page=8]{lower_env} \
+\includegraphics[height=120pt,page=1]{approx_diagram}%
 \end{center}
 \end{figure}
 \begin{itemize}
@@ -254,8 +253,8 @@
 \begin{frame}{Questions and prior results}
 % second question is more general than the first: ``characterize cost^* for every translation''
 \begin{enumerate}
-\item {\large How quickly can we \EMPH{compute $t^*$}, a global minimum of $\cost^*(t)$?}
-\item {\large What is the \EMPH{combinatorial complexity of $\M$}?}
+\item {\large How quickly can we \alert{compute $t^*$}, a global minimum of $\cost^*(t)$?}
+\item {\large What is the \alert{combinatorial complexity of $\M$}?}
 	\begin{itemize}
 	\item \mycite{Rote 10}: in 1D, at most $m(n-m)+1$.
 	\item \mycite{Ben-Avraham~{\etal} 14}: $O(n^2 m^{3.5}(e \ln m + e)^m)$ 
@@ -270,16 +269,30 @@
 \end{itemize}
 \end{frame}
 
-%TODO 1-d approximation idea, transition 1-D to 2-D
 % approximation lets us coarsen the diagram
 \begin{frame}{Approximating $\M$ (1-dimensional)}
 \begin{figure}
 \begin{center}
-%\includegraphics<1>[width=0.8\textwidth,page=1]{approx_diagram}%
-%\includegraphics<2>[width=0.8\textwidth,page=2]{approx_diagram}%
-%\includegraphics<3>[width=0.8\textwidth,page=3]{approx_diagram}%
-%\includegraphics<4>[width=0.8\textwidth,page=4]{approx_diagram}%
-%\includegraphics<5>[width=0.8\textwidth,page=5]{approx_diagram}%
+\includegraphics<1>[width=0.8\textwidth,page=9]{lower_env}%
+\includegraphics<2>[width=0.8\textwidth,page=10]{lower_env}%
+\includegraphics<3>[width=0.8\textwidth,page=11]{lower_env}%
+\includegraphics<4->[width=0.8\textwidth,page=12]{lower_env}%
+%\includegraphics<6->[width=0.8\textwidth,page=6]{approx_diagram}%
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Approximating $\M$ (2-dimensional)}
+% function over t for each k matching
+% cost*(t): the lower envelope
+% vertical projection subdivides the plane
+\begin{figure}
+\begin{center}
+\includegraphics<1>[width=0.8\textwidth,page=1]{approx_diagram}%
+\includegraphics<2>[width=0.8\textwidth,page=2]{approx_diagram}%
+\includegraphics<3>[width=0.8\textwidth,page=3]{approx_diagram}%
+\includegraphics<4>[width=0.8\textwidth,page=4]{approx_diagram}%
+\includegraphics<5>[width=0.8\textwidth,page=5]{approx_diagram}%
 \includegraphics<6->[width=0.8\textwidth,page=6]{approx_diagram}%
 \end{center}
 \end{figure}
@@ -293,15 +306,15 @@
 % can we compute t*, the minimum point of cost*(t)?
 %	polytime algorithm by traversing all cells of ~M
 \begin{enumerate}
-\item {\large How quickly can we \EMPH{compute $t^*$}, a global minimum of $\cost^*(t)$?}
+\item {\large How quickly can we \alert{compute $t^*$}, a global minimum of $\cost^*(t)$?}
 	\begin{theorem}
 	In $\poly(m, n, \eps^{-1})$ time, can compute a $(1+\eps)$ \\
-	\EMPH{approximation to $\cost^*(t^*)$} by exploring the cells of $\tildeM$.
+	\alert{approximation to $\cost^*(t^*)$} by exploring the faces of $\tildeM$.
 	\end{theorem}
-\item {\large What is the \EMPH{combinatorial complexity of $\M$}? Is it polynomial?}
+\item {\large What is the \alert{combinatorial complexity of $\M$}?}
 	\begin{theorem}
 	In $\poly(m, n, \eps^{-1})$ time, can construct a $(1+\eps)$
-	\EMPH{approximate diagram} $\tildeM$ of complexity
+	\alert{approximate diagram} $\tildeM$ of complexity
 	$O(n\eps^{-2}\log\eps^{-1})$.
 	\end{theorem}
 \end{enumerate}
@@ -327,36 +340,38 @@
 % originally used by Cabello for for EMD under translations
 % punchline: Vor(T) is constant approximate diagram!
 \begin{itemize}
-\item \EMPH{Point-to-point translations} \mycite{Cabello~{\etal} 08}:
+\item \alert{Point-to-point translations} \mycite{Cabello~{\etal} 08}:
 	$T \coloneqq \{t_{ba} = (b - a) \mid a \in A, b \in B\}$
-%TODO figures describing T
-%\begin{figure}
-%\begin{center}
-%\includegraphics<1>[width=0.6\textwidth,page=1]{point-to-point}%
-%\includegraphics<2>[width=0.6\textwidth,page=2]{point-to-point}%
-%\includegraphics<3>[width=0.6\textwidth,page=3]{point-to-point}%
-%\includegraphics<4>[width=0.6\textwidth,page=4]{point-to-point}%
-%\includegraphics<5->[width=0.6\textwidth,page=5]{point-to-point}%
-%\end{center}
-%\end{figure}
-\item Enough to look at the optimal matching of each $t \in T$.
+\begin{figure}
+\begin{center}
+\includegraphics<1>[width=0.6\textwidth,page=1]{point-to-point}%
+\includegraphics<2>[width=0.6\textwidth,page=2]{point-to-point}%
+\includegraphics<3>[width=0.6\textwidth,page=3]{point-to-point}%
+\includegraphics<4>[width=0.6\textwidth,page=4]{point-to-point}%
+\includegraphics<5>[width=0.6\textwidth,page=5]{point-to-point}%
+\includegraphics<6>[width=0.6\textwidth,page=6]{point-to-point}%
+\includegraphics<7>[width=0.6\textwidth,page=7]{point-to-point}%
+\includegraphics<8>[width=0.6\textwidth,page=8]{point-to-point}%
+\includegraphics<9->[width=0.6\textwidth,page=9]{point-to-point}%
+\end{center}
+\end{figure}
+\item<10-> Enough to look at the optimal matching of each $t_{ba} \in T$.
 \end{itemize}
 \end{frame}
 
-%TODO voronoi stuff
-\begin{frame}{Constant approximate diagram from point-to-point translations}
-%TODO figures describing voronoi diagram and equipping matching to cell
-%\begin{figure}
-%\begin{center}
-%\includegraphics<1>[width=0.6\textwidth,page=1]{point-to-point}%
-%\includegraphics<2>[width=0.6\textwidth,page=2]{point-to-point}%
-%\includegraphics<3>[width=0.6\textwidth,page=3]{point-to-point}%
-%\includegraphics<4>[width=0.6\textwidth,page=4]{point-to-point}%
-%\includegraphics<5->[width=0.6\textwidth,page=5]{point-to-point}%
-%\end{center}
-%\end{figure}
+% voronoi diagram of point-to-points
+\begin{frame}{$O(1)$-approximate diagram from point-to-point translations}
+\begin{figure}
+\begin{center}
+\includegraphics<1>[width=0.7\textwidth,page=9]{point-to-point}%
+\includegraphics<2>[width=0.7\textwidth,page=10]{point-to-point}%
+\includegraphics<3>[width=0.7\textwidth,page=11]{point-to-point}%
+\includegraphics<4>[width=0.7\textwidth,page=12]{point-to-point}%
+\includegraphics<5->[width=0.7\textwidth,page=13]{point-to-point}%
+\end{center}
+\end{figure}
 \begin{itemize}
-\item $\tildeM$ is a constant-approximate diagram of size $\abs{T} = mn$.
+\item<6-> $\tildeM$ is a constant-approximate diagram of size $\abs{T} = mn$.
 \end{itemize}
 \end{frame}
 
@@ -382,7 +397,8 @@
 % here: reduce the size O(mn) to O(mn/k)
 \begin{itemize}
 \item Any $O(1)$ approx. diagram is enough for the $(1+\eps)$ diagram.
-\item Reduce size from $O(mn) \rightarrow O(n)$.
+\item Partition $T$ into clusters of size at least $m/2$.
+\item Reduce diagram size from $O(mn) \rightarrow O(n)$.
 \end{itemize}
 %TODO clustering figure
 \end{frame}
