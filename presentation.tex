@@ -1,5 +1,5 @@
-%\documentclass[xcolor={dvipsnames,usenames}]{beamer}
-\documentclass[xcolor={dvipsnames,usenames},handout]{beamer} % use this to compile w/o pauses
+\documentclass[xcolor={dvipsnames,usenames}]{beamer}
+%\documentclass[xcolor={dvipsnames,usenames},handout]{beamer} % use this to compile w/o pauses
 \mode<presentation>
 {
 \usetheme{madrid}
@@ -163,11 +163,11 @@
 \includegraphics<7->[width=\textwidth,page=7]{pmt_example}%
 \end{center}
 \end{figure}
+\begin{itemize}
+\item<7-> Find the minimum-cost matching over all translations.
+% in words, mention polytime algorithms when t fixed ``well studied problem''
+\end{itemize}
 \end{frame}
-
-%TODO
-% first problem: find the minimum-cost matching over all translations (example figure)
-% explain static problem with a figure: ``if t is fixed, we have a well-studied problem for which there exist polytime algorithms''
 
 % introduce cost function, ``second main question involves the structure of the cost function''
 \begin{frame}{Cost function}
@@ -190,13 +190,24 @@
 \end{itemize}
 \end{frame}
 
-%TODO behavior under perturbations
+% cost under perturbations
 \begin{frame}{Cost function under perturbations}
 % equation
 % figures through: small perturbation, larger perturbation, general question
-%TODO figure
+\begin{equation*}
+\cost^*(t) \coloneqq \min_{\text{matching $M$}} \cost(M, t)
+\end{equation*}
+\begin{figure}
+\begin{center}
+\includegraphics<1>[width=0.7\textwidth,page=8]{pmt_example}%
+\includegraphics<2>[width=0.7\textwidth,page=9]{pmt_example}%
+\includegraphics<3>[width=0.7\textwidth,page=10]{pmt_example}%
+\includegraphics<4>[width=0.7\textwidth,page=11]{pmt_example}%
+\includegraphics<5->[width=0.7\textwidth,page=12]{pmt_example}%
+\end{center}
+\end{figure}
 \begin{itemize}
-\item How many distinct matchings appear in $\cost^*(t)$?
+\item<6-> How many distinct matchings appear in $\cost^*(t)$?
 \end{itemize}
 \end{frame}
 
@@ -345,7 +356,7 @@
 %\end{center}
 %\end{figure}
 \begin{itemize}
-\item $\tildeM$ is a constant-approximate diagram.
+\item $\tildeM$ is a constant-approximate diagram of size $\abs{T} = mn$.
 \end{itemize}
 \end{frame}
 
