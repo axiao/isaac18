@@ -1,5 +1,5 @@
-\documentclass[xcolor={dvipsnames,usenames}]{beamer}
-%\documentclass[xcolor={dvipsnames,usenames},handout]{beamer} % use this to compile w/o pauses
+%\documentclass[xcolor={dvipsnames,usenames}]{beamer}
+\documentclass[xcolor={dvipsnames,usenames},handout]{beamer} % use this to compile w/o pauses
 \mode<presentation>
 {
 \usetheme{madrid}
@@ -12,7 +12,7 @@
 
 
 \usepackage{microtype}
-
+\usepackage[normalem]{ulem}
 %\usepackage{hyperref}
 %\hypersetup{colorlinks=true, urlcolor=Blue, citecolor=Green, linkcolor=BrickRed, breaklinks, unicode}
 
@@ -165,30 +165,48 @@
 \end{figure}
 \end{frame}
 
-% introduce cost function
+%TODO
+% first problem: find the minimum-cost matching over all translations (example figure)
+% explain static problem with a figure: ``if t is fixed, we have a well-studied problem for which there exist polytime algorithms''
+
+% introduce cost function, ``second main question involves the structure of the cost function''
 \begin{frame}{Cost function}
 % equation
 % static problem (t fixed) has polytime algorithms, e.g. Hungarian algorithm [RT]
 \begin{itemize}
-\item For $k$-matching $M$ and translation $t$, define the \EMPH{$L_p$-cost}:
+\item Given point sets $A$, $B$, with $|A| = m$ and $|B| = n$, match $A$ into an $m$-subset of $B$ after translation $t$.
+\item For matching $M$ and translation $t$, define the \alert{root-mean-sqaure (RMS) cost} of the matching:
 	\begin{equation*}
-	\cost(M, t) \coloneqq \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{a+t-b}^p\right]^{1/p}
+	\cost(M, t) \coloneqq \left[\frac{1}{m}\sum_{(a, b) \in M}\norm{a+t-b}^p\right]^{1/2}
 	\end{equation*}
 \pause
-\item $p = 2$: root-mean-squared cost
+\item Can generalize to $p$-th power/$p$-th root (versus $2$),
+	and matching of size $k$ (versus $m$).
 \pause
-\item For fixed $t$, minimum $M$ computable in $\poly(k, m, n)$ time, \\
-	e.g. by Hungarian algorithm.
+\item Best matching cost at each translation:
+	\begin{equation*}
+	\cost^*(t) \coloneqq \min_{\text{matching $M$}} \cost(M, t)
+	\end{equation*}
+\end{itemize}
+\end{frame}
+
+%TODO behavior under perturbations
+\begin{frame}{Cost function under perturbations}
+% equation
+% figures through: small perturbation, larger perturbation, general question
+%TODO figure
+\begin{itemize}
+\item How many distinct matchings appear in $\cost^*(t)$?
 \end{itemize}
 \end{frame}
 
 % minimization diagram M
-\begin{frame}{Minimization diagram $\M$}
+\begin{frame}{How many distinct matchings? (1-dimensional)}
 % function over t for each k matching
 % cost*(t): the lower envelope
 % vertical projection subdivides the plane
 \begin{equation*}
-\cost^*(t) \coloneqq \min_{\text{$k$-matching $M$}} \cost(M, t)
+\cost^*(t) \coloneqq \min_{\text{matching $M$}} \cost(M, t)
 \end{equation*}
 \begin{figure}
 \begin{center}
@@ -204,37 +222,53 @@
 \end{figure}
 \end{frame}
 
-% main questions
-\begin{frame}{Questions and prior results}
-% what is the combinatorial complexity of M?
-%	p=2: ben-avraham et al bound
-%	rote: line intersects poly(n) cells
-% can we compute t*, the minimum point of cost*(t)?
-%	existing algorithm: traverse all cells of M (given point, find boundaries)
-\begin{enumerate}
-\item {\large What is the \EMPH{combinatorial complexity of $\M$}? Is it polynomial?}
-	\begin{itemize}
-	\item \mycite{Rote 10}: for $p=2$ and $k=m$, \\
-		a line crosses at most $m(n-m) + 1$ cells 
-	\item \mycite{Ben-Avraham~{\etal} 14}: for $p=2$ and $k=m$, \\
-		$O(n^2 m^{3.5}(e \ln m + e)^m)$ 
-	\end{itemize}
-\item {\large How quickly can we \EMPH{compute $t^*$}, a global minimum of $\cost^*(t)$?}
-	\begin{itemize}
-	\item Explore $\M$, use static algorithm within cells.
-	\end{itemize}
-\end{enumerate}
-\end{frame}
-
-% approximate diagram
-\begin{frame}{Approximating $\M$}
+%TODO transition 1-D to 2-D
+\begin{frame}{How many distinct matchings? (2-dimensional)}
+% function over t for each k matching
+% cost*(t): the lower envelope
+% vertical projection subdivides the plane
 \begin{figure}
 \begin{center}
-\includegraphics<1>[width=0.8\textwidth,page=1]{approx_diagram}%
-\includegraphics<2>[width=0.8\textwidth,page=2]{approx_diagram}%
-\includegraphics<3>[width=0.8\textwidth,page=3]{approx_diagram}%
-\includegraphics<4>[width=0.8\textwidth,page=4]{approx_diagram}%
-\includegraphics<5>[width=0.8\textwidth,page=5]{approx_diagram}%
+\includegraphics[width=0.6\textwidth,page=8]{lower_env}%
+%TODO 2d
+\end{center}
+\end{figure}
+\begin{itemize}
+\item \sout{How many distinct matchings appear in $\cost^*(t)$?}
+\item What is the combinatorial complexity of $\M$?
+\end{itemize}
+\end{frame}
+
+% main questions
+\begin{frame}{Questions and prior results}
+% second question is more general than the first: ``characterize cost^* for every translation''
+\begin{enumerate}
+\item {\large How quickly can we \EMPH{compute $t^*$}, a global minimum of $\cost^*(t)$?}
+\item {\large What is the \EMPH{combinatorial complexity of $\M$}?}
+	\begin{itemize}
+	\item \mycite{Rote 10}: in 1D, at most $m(n-m)+1$.
+	\item \mycite{Ben-Avraham~{\etal} 14}: $O(n^2 m^{3.5}(e \ln m + e)^m)$ 
+	\end{itemize}
+\end{enumerate}
+\vspace{20pt}
+\begin{itemize}
+\pause
+\item Open to find $t^*$ in polytime, and whether $\M$ has polynomial complexity.
+\pause
+\item Approximation?
+\end{itemize}
+\end{frame}
+
+%TODO 1-d approximation idea, transition 1-D to 2-D
+% approximation lets us coarsen the diagram
+\begin{frame}{Approximating $\M$ (1-dimensional)}
+\begin{figure}
+\begin{center}
+%\includegraphics<1>[width=0.8\textwidth,page=1]{approx_diagram}%
+%\includegraphics<2>[width=0.8\textwidth,page=2]{approx_diagram}%
+%\includegraphics<3>[width=0.8\textwidth,page=3]{approx_diagram}%
+%\includegraphics<4>[width=0.8\textwidth,page=4]{approx_diagram}%
+%\includegraphics<5>[width=0.8\textwidth,page=5]{approx_diagram}%
 \includegraphics<6->[width=0.8\textwidth,page=6]{approx_diagram}%
 \end{center}
 \end{figure}
@@ -248,91 +282,71 @@
 % can we compute t*, the minimum point of cost*(t)?
 %	polytime algorithm by traversing all cells of ~M
 \begin{enumerate}
-\item {\large What is the \EMPH{combinatorial complexity of $\M$}? Is it polynomial?}
-	\begin{theorem}
-	In $\poly(k, m, n, \eps^{-1})$ time, can construct a $(1+\eps)$
-	\EMPH{approximate diagram} $\tildeM$ of complexity
-	$O((mn/k)\eps^{-2}\log\eps^{-1})$.
-	\end{theorem}
 \item {\large How quickly can we \EMPH{compute $t^*$}, a global minimum of $\cost^*(t)$?}
 	\begin{theorem}
-	In $\poly(k, m, n, \eps^{-1})$ time, can compute a $(1+\eps)$ \\
+	In $\poly(m, n, \eps^{-1})$ time, can compute a $(1+\eps)$ \\
 	\EMPH{approximation to $\cost^*(t^*)$} by exploring the cells of $\tildeM$.
+	\end{theorem}
+\item {\large What is the \EMPH{combinatorial complexity of $\M$}? Is it polynomial?}
+	\begin{theorem}
+	In $\poly(m, n, \eps^{-1})$ time, can construct a $(1+\eps)$
+	\EMPH{approximate diagram} $\tildeM$ of complexity
+	$O(n\eps^{-2}\log\eps^{-1})$.
 	\end{theorem}
 \end{enumerate}
 \end{frame}
 
+% result's strategy
+\begin{frame}{Overview}
+\begin{enumerate}
+%\item We prove a \alert{Lipschitz property} for $\cost^*(t)$ over $t$.
+%\pause
+\item The set of \alert{point-to-point translations} give a constant
+	approximate diagram of size $mn$.
+\pause
+\item Using exponential grids, constant $\rightarrow$ \alert{$(1+\eps)$ approximation}
+	of size $O(mn\eps^{-2}\log\eps^{-1})$.
+\pause
+\item Reduce size to $O(\alert{n}\eps^{-2}\log\eps^{-1})$ by clustering.
+\end{enumerate}
+\end{frame}
+
 % Lipschitz property --> point-to-point translations
-\begin{frame}{Point-to-point translations \mycite{Cabello~{\etal} 08}}
+\begin{frame}{Point-to-point translations}
 % originally used by Cabello for for EMD under translations
 % punchline: Vor(T) is constant approximate diagram!
 \begin{itemize}
-\item \EMPH{Point-to-point translations}: $T \coloneqq \{t_{ba} = (b - a) \mid a \in A, b \in B\}$
-\begin{figure}
-\begin{center}
-\includegraphics<1>[width=0.6\textwidth,page=1]{point-to-point}%
-\includegraphics<2>[width=0.6\textwidth,page=2]{point-to-point}%
-\includegraphics<3>[width=0.6\textwidth,page=3]{point-to-point}%
-\includegraphics<4>[width=0.6\textwidth,page=4]{point-to-point}%
-\includegraphics<5->[width=0.6\textwidth,page=5]{point-to-point}%
-\end{center}
-\end{figure}
-\item<6-> Claim: Let $\tildeM$ be $\Vor(T)$, with each $\VorRegion(t_{ba})$ assigned the optimal $k$-matching at $t_{ba}$.
-	Then, $\tildeM$ is a $O(1)$-approximate diagram.
+\item \EMPH{Point-to-point translations} \mycite{Cabello~{\etal} 08}:
+	$T \coloneqq \{t_{ba} = (b - a) \mid a \in A, b \in B\}$
+%TODO figures describing T
+%\begin{figure}
+%\begin{center}
+%\includegraphics<1>[width=0.6\textwidth,page=1]{point-to-point}%
+%\includegraphics<2>[width=0.6\textwidth,page=2]{point-to-point}%
+%\includegraphics<3>[width=0.6\textwidth,page=3]{point-to-point}%
+%\includegraphics<4>[width=0.6\textwidth,page=4]{point-to-point}%
+%\includegraphics<5->[width=0.6\textwidth,page=5]{point-to-point}%
+%\end{center}
+%\end{figure}
+\item Enough to look at the optimal matching of each $t \in T$.
 \end{itemize}
 \end{frame}
 
-% key idea: L_p cost has Lipschitz property
-\begin{frame}{Lipschitz continuity for $L_p$-cost}
-% ``moving a short distance cannot increase \cost*(t) by much''
-\begin{equation*}
-\cost(M, t) \coloneqq \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{a+t-b}^p\right]^{1/p}
-\end{equation*}
-\begin{lemma}[Lipschitz condition]
-Given $t, \Delta \in \reals^2$, let $M_t$ be the optimal $k$-matching at $t$. \\
-Then $\cost(M_t, t+\Delta) \leq \cost^*(t) + \norm{\Delta}$.
-\end{lemma}
-%\begin{corollary}[Lipschitz condition]
-%Let $t_1, t_2 \in \reals^2$, then $\cost^*(t_2) \leq \cost^*(t_1) + \norm{t_2 - t_1}$.
-%\end{corollary}
-\end{frame}
-
-% point-to-point translations proof
-\begin{frame}{Proof of approximation for $T$}
-% by massaging the cost function: there is a point of T relatively close to every t
+%TODO voronoi stuff
+\begin{frame}{Constant approximate diagram from point-to-point translations}
+%TODO figures describing voronoi diagram and equipping matching to cell
+%\begin{figure}
+%\begin{center}
+%\includegraphics<1>[width=0.6\textwidth,page=1]{point-to-point}%
+%\includegraphics<2>[width=0.6\textwidth,page=2]{point-to-point}%
+%\includegraphics<3>[width=0.6\textwidth,page=3]{point-to-point}%
+%\includegraphics<4>[width=0.6\textwidth,page=4]{point-to-point}%
+%\includegraphics<5->[width=0.6\textwidth,page=5]{point-to-point}%
+%\end{center}
+%\end{figure}
 \begin{itemize}
-\item Claim: $\tildeM$ is an $O(1)$-approximate diagram.
-\item Given $t \in \reals^2$, let $t_0$ be its nearest neighbor in $T$,\\
-	and $M_{t_0}$ the optimal matching at $t_0$.
+\item $\tildeM$ is a constant-approximate diagram.
 \end{itemize}
-\begin{equation*}
-\begin{aligned}
-\onslide<1->{\cost^*(t) &= \min_{\text{$k$-matching $M$}} \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{a+t-b}^p\right]^{1/p} \\}
-	\onslide<2->{&= \min_{\text{$k$-matching $M$}} \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{t - \alert{t_{ba}}}^p\right]^{1/p} \\}
-	\onslide<3->{&\geq \min_{\text{$k$-matching $M$}} \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{t - \alert{t_0}}^p\right]^{1/p} \\}
-	\onslide<4->{&= \norm{t - t_0}}
-\end{aligned}
-\end{equation*}
-\end{frame}
-
-% constant approximate diagram
-\begin{frame}{Proof of approximation for $T$ (cont.)}
-% Lipschitz + point-to-point -->
-% Vor(T) is a constant approximate diagram!
-\begin{itemize}
-\item Claim: $\tildeM$ is an $O(1)$-approximate diagram.
-\item Given $t \in \reals^2$, let $t_0$ be its nearest neighbor in $T$,\\
-	and $M_{t_0}$ the optimal matching at $t_0$.
-\item $\norm{t - t_0} \leq \cost^*(t)$
-\end{itemize}
-\begin{equation*}
-\begin{aligned}
-\onslide<2->{\cost(M_{t_0}, t) &\leq \cost^*(t_0) + \norm{t - t_0} & \text{(Lipschitz cond.)}\\}
-	\onslide<3->{&\leq \cost^*(t) + 2\norm{t - t_0} & \text{(Lipschitz cond.)}\\}
-	\onslide<4->{&\leq \cost^*(t) + 2\cost^*(t) \\}
-	\onslide<5->{&= 3\cost^*(t)}
-\end{aligned}
-\end{equation*}
 \end{frame}
 
 % constant --> (1+eps)
@@ -348,138 +362,18 @@ Then $\cost(M_t, t+\Delta) \leq \cost^*(t) + \norm{\Delta}$.
 \item $(1+\eps)$ approximate diagram of size
 	$O(\abs{T}\eps^{-2}\log\eps^{-1}) = O((mn)\eps^{-2}\log\eps^{-1})$
 \end{itemize}
-\pause
-\begin{theorem}
-In $\poly(k, m, n, \eps^{-1})$ time, can construct a $(1+\eps)$ approximate
-diagram $\tildeM$ of complexity $O(\alert{(mn/k)}\eps^{-2}\log\eps^{-1})$.
-\end{theorem}
 \end{frame}
 
 % compressing ~M further
-\begin{frame}{Compressing $\tildeM$}
+\begin{frame}{Near-linear size: clustering $T$}
 % any O(1) approx is fine to apply the constant --> (1+eps) transformation
 % cluster T? how to ensure cluster radius small wrt cost*(t)?
 % here: reduce the size O(mn) to O(mn/k)
 \begin{itemize}
-\item Reduce size from $O(mn) \rightarrow O(mn/k)$.
 \item Any $O(1)$ approx. diagram is enough for the $(1+\eps)$ diagram.
-\item \EMPH{Cluster the points of $T$}\ldots
-	while keeping cluster radius small w.r.t. $\cost^*(t)$.
+\item Reduce size from $O(mn) \rightarrow O(n)$.
 \end{itemize}
-\end{frame}
-
-% key idea: averaging argument
-\begin{frame}{Averaging argument}
-% look at the cost function again
-% ``for matching M of cost \mu, there are \leq k/2 pairs with \norm{a-b} \geq 2\mu''
-% add translation t --> M_t
-% ``for matching M_t of cost \mu, there are \leq k/2 pairs with \norm{t - t_ab} \geq 2\mu''
-\begin{equation*}
-\cost^*(t) \coloneqq \min_{\text{$k$-matching $M$}} \left[\frac{1}{k}\sum_{(a, b) \in M}\norm{a+t-b}^p\right]^{1/p}
-\end{equation*}
-\begin{itemize}
-\item At most $k/2$ pairs $(a, b) \in M_t$ have $\norm{a+t-b} \geq 2^{1/p}\cost^*(t)$.
-\pause
-\item At most $k/2$ pairs $(a, b) \in M_t$ have $\norm{t-\alert{t_{ab}}} \geq 2^{1/p}\cost^*(t)$.
-\pause
-\item \alert{At least} $k/2$ pairs $(a, b) \in M_t$ have $\norm{t-t_{ab}} \alert{\leq} 2^{1/p}\cost^*(t)$.
-\end{itemize}
-\end{frame}
-
-% averaging argument picture
-\begin{frame}{Averaging argument (cont.)}
-% ``for matching M_t of cost \cost^*(t), there are \leq k/2 pairs with \norm{t - t_ab} \geq 2^{1/p}\cost^*(t)''
-\begin{itemize}
-\item \alert{At least} $k/2$ pairs $(a, b) \in M_t$ have $\norm{t-t_{ab}} \alert{\leq} 2^{1/p}\cost^*(t)$.
-\end{itemize}
-\begin{figure}
-\begin{center}
-\includegraphics<1>[width=0.6\textwidth,page=1]{ptp_in_disk}%
-\includegraphics<2>[width=0.6\textwidth,page=2]{ptp_in_disk}%
-\includegraphics<3->[width=0.6\textwidth,page=3]{ptp_in_disk}%
-\end{center}
-\end{figure}
-\end{frame}
-
-% greedy clustering by quorum clustering
-\begin{frame}{Clustering $T$ greedily}
-% inherit figure
-% find the (approx.) smallest disk D_i containing at least k/2 points of T, center x_i, radius r_i
-% remove covered points from T, and repeat
-% 2-approx. algorithm: O(|T|\polylog n) by Carmi et al.
-\begin{enumerate}
-\item Let $D_i = B(x_i, r_i)$ be the smallest disk containing at least $k/2$ remaining points of $T$.
-\item Remove from $T$ the points covered by $D_i$.
-\item Repeat.
-\end{enumerate}
-%TODO replace above with figure?
-\begin{itemize}
-\pause
-\item \EMPH{Quorum clustering}\\
-	$2$-approx. algorithm in $O(\abs{T}\polylog n)$ time \mycite{Carmi~{\etal} 05}
-\pause
-\item $O(\abs{T}/k) = O(mn/k)$ clusters.
-\end{itemize}
-\end{frame}
-
-% quorum clustering gives a constant approx
-\begin{frame}{Greedy clustering proof of approximation}
-% let X be the set of centers x_i, and ~M = Vor(X)
-% proof by figure?
-% for any translation t, consider disk D of radius 2^{1/p}\cost^*(t) centered at t
-% D covers at least k/2 points of T
-% let i^* be the first index where D_i^* covers a point of D \cap T
-% since D_i^* is (approx) min-radius, r_i^* \leq 2* 2^{1/p}\cost^*(t)
-% so, \norm{t - x_i^*} \leq 3*2^{1/p}\cost^*(t)
-% as a NN, \norm{t - x_0} \leq 6\cost^*(t)
-% apply the Lipschitz property --> Vor(X) is O(1)-approx diagram
-% apply the grid refinement --> (1+\eps) approx diagram of size O((mn/k\eps^2)\log(1/\eps))
-\begin{itemize}
-\item Let $X$ be the set of centers $x_i$ from the greedy clustering,
-	and $\tildeM = \Vor(X)$ with each $\VorRegion(x_i)$ assigned $M_{x_i}$.
-\end{itemize}
-\begin{figure}
-\begin{center}
-\includegraphics<1>[width=0.7\textwidth,page=1]{cluster_proof}%
-\includegraphics<2>[width=0.7\textwidth,page=2]{cluster_proof}%
-\includegraphics<3>[width=0.7\textwidth,page=3]{cluster_proof}%
-\includegraphics<4>[width=0.7\textwidth,page=4]{cluster_proof}%
-\includegraphics<5->[width=0.7\textwidth,page=5]{cluster_proof}%
-\end{center}
-\end{figure}
-\end{frame}
-
-% cont.
-\begin{frame}{Greedy clustering proof of approximation}
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.7\textwidth,page=5]{cluster_proof}%
-\end{center}
-\end{figure}
-\begin{itemize}
-\item $\cost(M_{x_i}, t) \leq (1+6\cdot 2^{1/p}) \cost^*(t)$
-\item Using grids, $(1+\eps)$ approx. diagram of size
-	$O((mn/k) \eps^{-2}\log \eps^{-1})$.
-\end{itemize}
-\end{frame}
-
-% lower bound on approx. diagram size when k is a constant fraction of m (m \leq n)
-\begin{frame}{Lower bound: $O(mn/k)$ tight for large $k$}
-% O(mn/k) = O(n)
-% figure of [\sqrt{n}]^2 and [\sqrt{m}]^2 grid
-% \Omega(n) translations where they are perfectly aligned with \geq k points in common (cost^*(t) = 0)
-% at least \Omega(n) faces in any constant-approx diagram
-\begin{itemize}
-\item For $k = c\cdot\min(m, n)$, constant $c$:
-\end{itemize}
-\begin{figure}
-\begin{center}
-\includegraphics<1>[width=0.7\textwidth,page=1]{lower_bound_big_k}%
-\includegraphics<2>[width=0.7\textwidth,page=2]{lower_bound_big_k}%
-\includegraphics<3>[width=0.7\textwidth,page=3]{lower_bound_big_k}%
-\includegraphics<4->[width=0.7\textwidth,page=4]{lower_bound_big_k}%
-\end{center}
-\end{figure}
+%TODO clustering figure
 \end{frame}
 
 % open questions
@@ -487,15 +381,12 @@ diagram $\tildeM$ of complexity $O(\alert{(mn/k)}\eps^{-2}\log\eps^{-1})$.
 % is the complexity of the exact minimization diagram polynomial? for p=2?
 % approximate diagrams for rotations? rigid transforms?
 \begin{enumerate}
-\item Is the complexity of $\M$ polynomial, for any $p$?
+\item Is the complexity of $\M$ polynomial?
 \item Approximate diagrams for rotations? Rigid transforms?
 \end{enumerate}
 \end{frame}
 
-% 20
-%\begin{frame}
-%\end{frame}
-
+% end slide
 \begin{frame}{The End}
 \begin{center}
 	Thank you.
