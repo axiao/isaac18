@@ -177,11 +177,10 @@
 \item Given point sets $A$, $B$, with $|A| = m$ and $|B| = n$, match $A$ into an $m$-subset of $B$ after translation $t$.
 \item For matching $M$ and translation $t$, define the \alert{root-mean-sqaure (RMS) cost} of the matching:
 	\begin{equation*}
-	\cost(M, t) \coloneqq \left[\frac{1}{m}\sum_{(a, b) \in M}\norm{a+t-b}^p\right]^{1/2}
+	\cost(M, t) \coloneqq \left[\frac{1}{m}\sum_{(a, b) \in M}\norm{a+t-b}^2\right]^{1/2}
 	\end{equation*}
-\pause
-\item Can generalize to $p$-th power/$p$-th root (versus $2$),
-	and matching of size $k$ (versus $m$).
+%\pause
+%\item Can generalize to $p$-th power/$p$-th root, and matching of size $k$.
 \pause
 \item Best matching cost at each translation:
 	\begin{equation*}
@@ -256,6 +255,7 @@
 \item {\large How quickly can we \alert{compute $t^*$}, a global minimum of $\cost^*(t)$?}
 \item {\large What is the \alert{combinatorial complexity of $\M$}?}
 	\begin{itemize}
+	\pause
 	\item \mycite{Rote 10}: in 1D, at most $m(n-m)+1$.
 	\item \mycite{Ben-Avraham~{\etal} 14}: $O(n^2 m^{3.5}(e \ln m + e)^m)$ 
 	\end{itemize}
@@ -292,8 +292,8 @@
 \includegraphics<2>[width=0.8\textwidth,page=2]{approx_diagram}%
 \includegraphics<3>[width=0.8\textwidth,page=3]{approx_diagram}%
 \includegraphics<4>[width=0.8\textwidth,page=4]{approx_diagram}%
-\includegraphics<5>[width=0.8\textwidth,page=5]{approx_diagram}%
-\includegraphics<6->[width=0.8\textwidth,page=6]{approx_diagram}%
+\includegraphics<5->[width=0.8\textwidth,page=5]{approx_diagram}%
+%\includegraphics<6->[width=0.8\textwidth,page=6]{approx_diagram}%
 \end{center}
 \end{figure}
 \end{frame}
